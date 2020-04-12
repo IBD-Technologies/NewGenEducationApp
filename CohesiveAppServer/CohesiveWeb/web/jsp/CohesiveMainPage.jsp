@@ -119,12 +119,15 @@
          <input type="hidden" id="dummyAmount" value="">
          <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade cohesiveContent" id="Content" role="tabpanel">
+                
                 <div class="imgcenter">
                   <img class="imgHeader" src="/img/Statistics1.jpg" alt="Card image cap">
-                </div>    
+                </div>
+                       
                <!-- <h4 class="card-header cohesiveCardHeader">Attendance & Fee</h4>-->
+              
                <c:if test="${userType=='P'}">
-                  <h4 class="card-header cohesiveCardHeader">Attendance & Fee</h4>
+                   <h4 class="card-header cohesiveCardHeader">Attendance & Fee</h4>
                   <div class="form-group row">
                      <label for="studName" class="col-3 col-form-label"> Student Name</label>
                      <div class="col-9">
@@ -138,9 +141,25 @@
                         </div>
                      </div>
                   </div>
+                  
                </c:if>
                <c:if test="${userType!='P'}">
-                  <nav ng-show="dashBoardProcessDone">
+                   
+                   <div class="d-flex  p-3  alert-warning ">
+                     <div class="mr-auto p-2 bd-highlight">DashBoard
+                         <span ng-show="!dashBoardProcessDone"> is in progress
+                         <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                         
+                         </span></div>
+                     
+                      
+                     <div class="p-2 bd-highlight"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+
+
+                  <nav >
                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item dash nav-link active" id="nav-attendance-tab" data-toggle="tab" href="#attendance" role="tab" aria-controls="nav-home" aria-selected="true">Attendance</a>
                         <c:if test="${userType=='A'}">
@@ -152,10 +171,10 @@
                         </c:if>
                      </div>
                   </nav>
-                  <div ng-show="!dashBoardProcessDone" class="alert alert-warning" role="alert" id="dashBoardAlert">
+                 <!-- <div ng-show="!dashBoardProcessDone" class="alert alert-warning" role="alert" id="dashBoardAlert">
                      Dashboard is under processing , Please wait!.. You can do other task in application until it gets completed
-                  </div>
-                  <div ng-show="dashBoardProcessDone" class="tab-content" id="myTabContent">
+                  </div> -->
+                  <div  class="tab-content" id="myTabContent">
                      <div class="tab-pane fade show active" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
                         <c:if test="${userType=='A'}">
                            <ul class="list-group list-group-flush">
@@ -421,8 +440,10 @@
                         Show More	</a><div id="CardSubmenu" class="collapse"><p> Hello World </p></div></div> -->
                      <!--  </div>-->
                   </div>
+                  
                </c:if>
-            </div>
+                </div>  
+           
             <div class="tab-pane fade" id="Notifications" role="tabpanel">
                <div class="card">
                   <a href="#" class="btn btn-light cohesive_textbutton card-title">
