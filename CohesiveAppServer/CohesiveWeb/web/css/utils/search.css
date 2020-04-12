@@ -1,0 +1,29 @@
+.searchbtn{
+    text-align: left;
+    white-space:initial;
+    display: list-item;
+}
+
+.searchbtn .badge {
+    position: relative;
+    top: -1px;
+    float: right;
+}
+.SearchListColor{
+color:#228272;
+}
+.SearchHeader
+{
+    min-height: 5%;
+    max-height: 5%;
+	 /*border-bottom: 2px solid #228272;
+	 border-top:  2px solid #228272;*/
+  box-sizing: border-box !important;      
+  }
+.SearchBody
+{
+    max-height: 85%;
+    min-height: 85%;
+     width: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,27 @@
+unused variable should be commented 
+
+Unused Imports should be commented 
+
+Exception handling 
+
+Dummy variable clearence in the finally block
+
+Request variable should be cleared 
+
+No need of Business object as instanse varaiable, it can be refered from request object as below 
+
+StudentMaster studentMaster=(StudentMaster)request.getReqBody();
+      
+
+Validations has to be rechecked (Especially Mandatory)
+
+auditLogDataValidation method can be changed later with out jsonobject paramter
+
+
+Throws Exception is not required for EJB business methods 
+
+Validation Exceptions should not have debug
+
+Each method should have begin and exit debugs. 
+
+

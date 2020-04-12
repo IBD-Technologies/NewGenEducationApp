@@ -1,0 +1,8 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<deployment>
+    <resources>
+      <resource-root path="CohesiveLibrary.jar" />
+	  <resource-root path="DBProperties.properties" />
+    </resources>
+  </deployment>
+</jboss-deployment-structure>

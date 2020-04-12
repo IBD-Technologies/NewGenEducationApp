@@ -1,0 +1,9 @@
+.cohesive-embed-responsive{
+	position: relative;
+	display:block;
+	width:100%;
+	/*height:200%;*/
+	height:-webkit-fill-available;
+	padding:0;
+	overflow:hidden;
+}

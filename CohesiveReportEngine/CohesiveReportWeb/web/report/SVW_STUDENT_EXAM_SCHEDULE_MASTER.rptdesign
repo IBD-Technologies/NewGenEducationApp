@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.data.oda.pojo" name="SVW_STUDENT_EXAM_SCHEDULE_MASTER" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>SynchronizeClassPath</name>
+                    <value>true</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClassPath</name>
+                    <value>CohesiveReportEngine-ejb.jar;</value>
+                </ex-property>
+            </list-property>
+            <property name="pojoDataSetClassPath">CohesiveReportEngine-ejb.jar;</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.data.oda.pojo.dataSet" name="SVW_STUDENT_EXAM_SCHEDULE_MASTER" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">STUDENT_ID</property>
+                    <text-property name="heading">STUDENT_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EXAM</property>
+                    <text-property name="heading">EXAM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MAKER_ID</property>
+                    <text-property name="heading">MAKER_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CHECKER_ID</property>
+                    <text-property name="heading">CHECKER_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MAKER_DATE_STAMP</property>
+                    <text-property name="heading">MAKER_DATE_STAMP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CHECKER_DATE_STAMP</property>
+                    <text-property name="heading">CHECKER_DATE_STAMP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RECORD_STATUS</property>
+                    <text-property name="heading">RECORD_STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AUTH_STATUS</property>
+                    <text-property name="heading">AUTH_STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VERSION_NUMBER</property>
+                    <text-property name="heading">VERSION_NUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MAKER_REMARKS</property>
+                    <text-property name="heading">MAKER_REMARKS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CHECKER_REMARKS</property>
+                    <text-property name="heading">CHECKER_REMARKS</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">STUDENT_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EXAM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">MAKER_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CHECKER_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">MAKER_DATE_STAMP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CHECKER_DATE_STAMP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">RECORD_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">AUTH_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">VERSION_NUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">MAKER_REMARKS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">CHECKER_REMARKS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">SVW_STUDENT_EXAM_SCHEDULE_MASTER</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">STUDENT_ID</property>
+                    <property name="nativeName">STUDENT_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EXAM</property>
+                    <property name="nativeName">EXAM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">MAKER_ID</property>
+                    <property name="nativeName">MAKER_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CHECKER_ID</property>
+                    <property name="nativeName">CHECKER_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">MAKER_DATE_STAMP</property>
+                    <property name="nativeName">MAKER_DATE_STAMP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CHECKER_DATE_STAMP</property>
+                    <property name="nativeName">CHECKER_DATE_STAMP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">RECORD_STATUS</property>
+                    <property name="nativeName">RECORD_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">AUTH_STATUS</property>
+                    <property name="nativeName">AUTH_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">VERSION_NUMBER</property>
+                    <property name="nativeName">VERSION_NUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">MAKER_REMARKS</property>
+                    <property name="nativeName">MAKER_REMARKS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">CHECKER_REMARKS</property>
+                    <property name="nativeName">CHECKER_REMARKS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PojoQuery appContextKey="APP_CONTEXT_KEY_SVW_STUDENT_EXAM_SCHEDULE_MASTER" dataSetClass="com.ibd.cohesive.report.dbreport.dataSources.student.SVW_STUDENT_EXAM_SCHEDULE_MASTER_DataSource" version="1.0">
+    <ColumnMapping index="1" name="STUDENT_ID" odaDataType="String">
+        <Method name="getSTUDENT_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="2" name="EXAM" odaDataType="String">
+        <Method name="getEXAM"/>
+    </ColumnMapping>
+    <ColumnMapping index="3" name="MAKER_ID" odaDataType="String">
+        <Method name="getMAKER_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="4" name="CHECKER_ID" odaDataType="String">
+        <Method name="getCHECKER_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="5" name="MAKER_DATE_STAMP" odaDataType="String">
+        <Method name="getMAKER_DATE_STAMP"/>
+    </ColumnMapping>
+    <ColumnMapping index="6" name="CHECKER_DATE_STAMP" odaDataType="String">
+        <Method name="getCHECKER_DATE_STAMP"/>
+    </ColumnMapping>
+    <ColumnMapping index="7" name="RECORD_STATUS" odaDataType="String">
+        <Method name="getRECORD_STATUS"/>
+    </ColumnMapping>
+    <ColumnMapping index="8" name="AUTH_STATUS" odaDataType="String">
+        <Method name="getAUTH_STATUS"/>
+    </ColumnMapping>
+    <ColumnMapping index="9" name="VERSION_NUMBER" odaDataType="String">
+        <Method name="getVERSION_NUMBER"/>
+    </ColumnMapping>
+    <ColumnMapping index="10" name="MAKER_REMARKS" odaDataType="String">
+        <Method name="getMAKER_REMARKS"/>
+    </ColumnMapping>
+    <ColumnMapping index="11" name="CHECKER_REMARKS" odaDataType="String">
+        <Method name="getCHECKER_REMARKS"/>
+    </ColumnMapping>
+</PojoQuery>
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STUDENT_ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STUDENT_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>EXAM</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EXAM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MAKER_ID</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAKER_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CHECKER_ID</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHECKER_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MAKER_DATE_STAMP</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAKER_DATE_STAMP</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CHECKER_DATE_STAMP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHECKER_DATE_STAMP</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RECORD_STATUS</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RECORD_STATUS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>AUTH_STATUS</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>AUTH_STATUS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>VERSION_NUMBER</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VERSION_NUMBER</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MAKER_REMARKS</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAKER_REMARKS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CHECKER_REMARKS</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHECKER_REMARKS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>methodNameRegx</name>
+                    <value>get*</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClass</name>
+                    <value>com.ibd.cohesive.report.dbreport.dataModels.student.SVW_STUDENT_EXAM_SCHEDULE_MASTER</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="14">
+            <column id="15"/>
+            <row id="16">
+                <cell id="17">
+                    <method name="onCreate"><![CDATA[function wraptext(textToWrap) {
+var wrappedText = '';
+while (textToWrap.length > 0) {
+wrappedText += textToWrap.substring(0,10) + '\n';
+textToWrap = textToWrap.substring(10);
+}
+return wrappedText;
+}]]></method>
+                    <label id="18">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Table Report</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="19">
+            <column id="20"/>
+            <row id="21">
+                <cell id="22">
+                    <text id="24">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<H6>Table Name: <B>SVW_STUDENT_EXAM_SCHEDULE_MASTER</B> </H6>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <table id="26">
+            <property name="textAlign">center</property>
+            <property name="dataSet">SVW_STUDENT_EXAM_SCHEDULE_MASTER</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">STUDENT_ID</property>
+                    <text-property name="displayName">STUDENT_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STUDENT_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EXAM</property>
+                    <text-property name="displayName">EXAM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EXAM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MAKER_ID</property>
+                    <text-property name="displayName">MAKER_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["MAKER_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHECKER_ID</property>
+                    <text-property name="displayName">CHECKER_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CHECKER_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MAKER_DATE_STAMP</property>
+                    <text-property name="displayName">MAKER_DATE_STAMP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["MAKER_DATE_STAMP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHECKER_DATE_STAMP</property>
+                    <text-property name="displayName">CHECKER_DATE_STAMP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CHECKER_DATE_STAMP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECORD_STATUS</property>
+                    <text-property name="displayName">RECORD_STATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RECORD_STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">AUTH_STATUS</property>
+                    <text-property name="displayName">AUTH_STATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["AUTH_STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">VERSION_NUMBER</property>
+                    <text-property name="displayName">VERSION_NUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["VERSION_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MAKER_REMARKS</property>
+                    <text-property name="displayName">MAKER_REMARKS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["MAKER_REMARKS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHECKER_REMARKS</property>
+                    <text-property name="displayName">CHECKER_REMARKS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CHECKER_REMARKS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="85"/>
+            <column id="86"/>
+            <column id="87"/>
+            <column id="88"/>
+            <column id="89"/>
+            <column id="90"/>
+            <column id="91"/>
+            <column id="92"/>
+            <column id="93"/>
+            <column id="94"/>
+            <column id="95"/>
+            <header>
+                <row id="27">
+                    <cell id="28">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="29">
+                            <text-property name="text">STUDENT_ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="31">
+                            <text-property name="text">EXAM</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="33">
+                            <text-property name="text">MAKER_ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="35">
+                            <text-property name="text">CHECKER_ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="37">
+                            <text-property name="text">MAKER_DATE_STAMP</text-property>
+                        </label>
+                    </cell>
+                    <cell id="38">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="39">
+                            <text-property name="text">CHECKER_DATE_STAMP</text-property>
+                        </label>
+                    </cell>
+                    <cell id="40">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="41">
+                            <text-property name="text">RECORD_STATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="42">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="43">
+                            <text-property name="text">AUTH_STATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="44">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="45">
+                            <text-property name="text">VERSION_NUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="46">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="47">
+                            <text-property name="text">MAKER_REMARKS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="48">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="49">
+                            <text-property name="text">CHECKER_REMARKS</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="50">
+                    <cell id="51">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="52">
+                            <property name="resultSetColumn">STUDENT_ID</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="54">
+                            <property name="resultSetColumn">EXAM</property>
+                        </data>
+                    </cell>
+                    <cell id="55">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="56">
+                            <property name="resultSetColumn">MAKER_ID</property>
+                        </data>
+                    </cell>
+                    <cell id="57">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="58">
+                            <property name="resultSetColumn">CHECKER_ID</property>
+                        </data>
+                    </cell>
+                    <cell id="59">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="60">
+                            <property name="resultSetColumn">MAKER_DATE_STAMP</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="62">
+                            <property name="resultSetColumn">CHECKER_DATE_STAMP</property>
+                        </data>
+                    </cell>
+                    <cell id="63">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="64">
+                            <property name="resultSetColumn">RECORD_STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="65">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="66">
+                            <property name="resultSetColumn">AUTH_STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="67">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="68">
+                            <property name="resultSetColumn">VERSION_NUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="69">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="70">
+                            <property name="resultSetColumn">MAKER_REMARKS</property>
+                        </data>
+                    </cell>
+                    <cell id="71">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="72">
+                            <property name="resultSetColumn">CHECKER_REMARKS</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

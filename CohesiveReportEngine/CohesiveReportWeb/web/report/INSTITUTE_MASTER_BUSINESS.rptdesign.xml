@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201806261756</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="instituteId" id="6">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.data.oda.pojo" name="INSTITUTE_MASTER_BUSINESS" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>SynchronizeClassPath</name>
+                    <value>true</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClassPath</name>
+                    <value>DataSource/CohesiveReportEngine-ejb.jar;</value>
+                </ex-property>
+            </list-property>
+            <property name="pojoDataSetClassPath">DataSource/CohesiveReportEngine-ejb.jar;</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.data.oda.pojo.dataSet" name="INSTITUTE_MASTER_BUSINESS" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">INSTITUTE_ID</property>
+                    <text-property name="heading">INSTITUTE_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">INSTITUTE_NAME</property>
+                    <text-property name="heading">INSTITUTE_NAME</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">INSTITUTE_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">INSTITUTE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">INSTITUTE_MASTER_BUSINESS</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">INSTITUTE_ID</property>
+                    <property name="nativeName">INSTITUTE_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">INSTITUTE_NAME</property>
+                    <property name="nativeName">INSTITUTE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PojoQuery appContextKey="APP_CONTEXT_KEY_INSTITUTE_MASTER_BUSINESS" dataSetClass="com.ibd.cohesive.report.businessreport.dataSources.classEntity.INSTITUTE_MASTER_BUSINESS_DataSource" version="1.0">
+    <ColumnMapping index="1" name="INSTITUTE_ID" odaDataType="String">
+        <Method name="getINSTITUTE_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="2" name="INSTITUTE_NAME" odaDataType="String">
+        <Method name="getINSTITUTE_NAME"/>
+    </ColumnMapping>
+</PojoQuery>
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>INSTITUTE_ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>INSTITUTE_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>INSTITUTE_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>INSTITUTE_NAME</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>methodNameRegx</name>
+                    <value>get*</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClass</name>
+                    <value>com.ibd.cohesive.report.businessreport.dataModels.app.INSTITUTE_MASTER_BUSINESS</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <data id="7">
+            <property name="dataSet">INSTITUTE_MASTER_BUSINESS</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">INSTITUTE_ID</property>
+                    <text-property name="displayName">INSTITUTE_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["INSTITUTE_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">INSTITUTE_ID</property>
+        </data>
+        <data id="8">
+            <property name="dataSet">INSTITUTE_MASTER_BUSINESS</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">INSTITUTE_NAME</property>
+                    <text-property name="displayName">INSTITUTE_NAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["INSTITUTE_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">INSTITUTE_NAME</property>
+        </data>
+    </body>
+</report>

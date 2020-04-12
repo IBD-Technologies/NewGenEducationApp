@@ -1,0 +1,33 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+<deployment>
+    <dependencies>
+	<module name="com.ibd.cohesive.gateway.config"/>
+        <module name="com.ibd.cohesive.lib"/>
+      </dependencies>
+   <exclusions>
+            <module name="org.apache.commons.logging" />
+   </exclusions> 
+  </deployment>
+  
+<sub-deployment name="CohesiveReportEngine-ejb.jar">
+    <dependencies>
+      <module name="com.ibd.cohesive.lib"/>
+     
+</dependencies>
+    <local-last value="true" />
+  </sub-deployment>
+  
+  
+
+<sub-deployment name="CohesiveReportWeb.war">
+    <dependencies>
+	  <module name="deployment.CohesiveReportEAR.ear.CohesiveReportEngine-ejb.jar"/>
+    </dependencies>
+	<exclusions>
+            <module name="org.apache.commons.logging" />
+   </exclusions> 
+    <local-last value="true" />
+  </sub-deployment> 
+  
+   </jboss-deployment-structure> 

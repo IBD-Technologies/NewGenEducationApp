@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201806261756</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="businessDate" id="6">
+            <text-property name="promptText">Enter Business Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.data.oda.pojo" name="DEFRAGMENTATION_BATCH_STATUS_ERROR" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>SynchronizeClassPath</name>
+                    <value>true</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClassPath</name>
+                    <value>dataSource/CohesiveReportEngine-ejb.jar;</value>
+                </ex-property>
+            </list-property>
+            <property name="pojoDataSetClassPath">dataSource/CohesiveReportEngine-ejb.jar;</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.data.oda.pojo.dataSet" name="DEFRAGMENTATION_BATCH_STATUS_ERROR" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FILE_NAME</property>
+                    <text-property name="heading">FILE_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILE_TYPE</property>
+                    <text-property name="heading">FILE_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BUSINESS_DATE</property>
+                    <text-property name="heading">BUSINESS_DATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ERROR</property>
+                    <text-property name="heading">ERROR</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FILE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FILE_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BUSINESS_DATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ERROR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DEFRAGMENTATION_BATCH_STATUS_ERROR</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FILE_NAME</property>
+                    <property name="nativeName">FILE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FILE_TYPE</property>
+                    <property name="nativeName">FILE_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BUSINESS_DATE</property>
+                    <property name="nativeName">BUSINESS_DATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ERROR</property>
+                    <property name="nativeName">ERROR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PojoQuery appContextKey="APP_CONTEXT_KEY_DEFRAGMENTATION_BATCH_STATUS_ERROR" dataSetClass="com.ibd.cohesive.report.dbreport.dataSources.batch.DEFRAGMENTATION_BATCH_STATUS_ERROR_DataSource" version="1.0">
+    <ColumnMapping index="1" name="FILE_NAME" odaDataType="String">
+        <Method name="getFILE_NAME"/>
+    </ColumnMapping>
+    <ColumnMapping index="2" name="FILE_TYPE" odaDataType="String">
+        <Method name="getFILE_TYPE"/>
+    </ColumnMapping>
+    <ColumnMapping index="3" name="BUSINESS_DATE" odaDataType="String">
+        <Method name="getBUSINESS_DATE"/>
+    </ColumnMapping>
+    <ColumnMapping index="4" name="ERROR" odaDataType="String">
+        <Method name="getERROR"/>
+    </ColumnMapping>
+</PojoQuery>
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FILE_NAME</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FILE_NAME</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FILE_TYPE</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FILE_TYPE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BUSINESS_DATE</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BUSINESS_DATE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ERROR</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ERROR</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>methodNameRegx</name>
+                    <value>get*</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClass</name>
+                    <value>com.ibd.cohesive.report.dbreport.dataModels.batch.DEFRAGMENTATION_BATCH_STATUS_ERROR</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <column id="8"/>
+            <row id="9">
+                <cell id="10">
+                    <label id="11">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Table Report</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="12">
+            <column id="13"/>
+            <row id="14">
+                <cell id="15">
+                    <text id="20">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<H6>File Name:  <VALUE-OF>params["businessDate"].value</VALUE-OF></H6>
+<BR>
+<H6>Table Name: <B>DEFRAGMENTATION_BATCH_STATUS_ERROR</B> </H6>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="21">
+            <column id="22"/>
+            <row id="23">
+                <cell id="24">
+                    <table id="25">
+                        <property name="dataSet">DEFRAGMENTATION_BATCH_STATUS_ERROR</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FILE_NAME</property>
+                                <text-property name="displayName">FILE_NAME</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FILE_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FILE_TYPE</property>
+                                <text-property name="displayName">FILE_TYPE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FILE_TYPE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BUSINESS_DATE</property>
+                                <text-property name="displayName">BUSINESS_DATE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["BUSINESS_DATE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ERROR</property>
+                                <text-property name="displayName">ERROR</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ERROR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="49"/>
+                        <column id="50"/>
+                        <column id="51"/>
+                        <column id="52"/>
+                        <header>
+                            <row id="26">
+                                <cell id="27">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="28">
+                                        <text-property name="text">FILE_NAME</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="29">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="30">
+                                        <text-property name="text">FILE_TYPE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="31">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="32">
+                                        <text-property name="text">BUSINESS_DATE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="33">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="34">
+                                        <text-property name="text">ERROR</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="35">
+                                <cell id="36">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="37">
+                                        <property name="resultSetColumn">FILE_NAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="38">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="39">
+                                        <property name="resultSetColumn">FILE_TYPE</property>
+                                    </data>
+                                </cell>
+                                <cell id="40">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="41">
+                                        <property name="resultSetColumn">BUSINESS_DATE</property>
+                                    </data>
+                                </cell>
+                                <cell id="42">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="43">
+                                        <property name="resultSetColumn">ERROR</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

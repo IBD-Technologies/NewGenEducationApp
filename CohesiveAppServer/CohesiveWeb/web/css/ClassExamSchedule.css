@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 7, 2018, 2:30:25 PM
+    Author     : Munish
+*/
+
+.cohesive_border{
+     width:100%;
+    border:1px groove blue;
+}
+.cohesive_topmargin{
+    margin-top:1%;
+}
+.cohesive_badge{
+    color:blue;
+    background: white;
+}
+.Cohesive_cardbody{
+   /* background:#4a65a0;
+    color:White;*/
+    padding:0;
+}
+.cohesive_cardheader{
+    background:#4a65a0;
+}
+.cohesive_button{
+    background: #4a65a0;
+    border: #4a65a0;
+    color:white;
+}
+
+.cohesive_stripped{
+    background: yellow;
+}
+.btn.focus, .btn:focus {
+    outline: 0;
+     box-shadow:none;
+}
+ .cohesive_table {
+    width: 100%;
+    /* margin-bottom: 1rem; */
+}

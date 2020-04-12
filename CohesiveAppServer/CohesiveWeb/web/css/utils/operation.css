@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 8, 2018, 1:54:45 AM
+    Author     : Munish
+*/
+.pagination_background{
+        background:#228272;
+        border-radius:0;
+        margin-top: 0;
+        margin-bottom: 0;
+}
+.operation_button{
+    background:#FFFFFF;
+    color:#228272;
+    font-size:15px;
+}
+.cohesive_border2{
+   border-bottom: 2px solid #228272;
+    border-top: 2px solid #228272;
+}
+.page_style{
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    background-color:#228272;
+}
+.pagination_background{
+        background:#228272;
+        border-radius:0;
+}
+
+
+ 

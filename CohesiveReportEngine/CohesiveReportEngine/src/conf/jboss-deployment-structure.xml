@@ -1,0 +1,59 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+<deployment>
+    <dependencies>
+	<module name="com.ibd.cohesive.report.config"/>
+        <module name="com.ibd.cohesive.report.lib"/>
+	<module name="com.ibd.cohesive.reportEjb.lib"/>
+	</dependencies>
+   <exclusions>
+            <module name="org.apache.commons.logging" />
+   </exclusions> 
+  </deployment>
+<sub-deployment name="CohesiveDatabase.jar">
+<dependencies>
+      <module name="com.ibd.cohesive.report.lib"/>
+      <module name="com.ibd.cohesive.reportEjb.lib"/>
+</dependencies>
+    <local-last value="true" />
+</sub-deployment>
+<sub-deployment name="CohesiveBusiness-ejb.jar">
+    <dependencies>
+	  <module name="com.ibd.cohesive.report.lib"/>
+	   <module name="com.ibd.cohesive.reportEjb.lib"/>
+      <module name="deployment.CohesiveReportEngine.ear.CohesiveDatabase.jar"/>
+    </dependencies>
+    <local-last value="true" />
+  </sub-deployment> 
+  <sub-deployment name="ReportProcessing.jar">
+    <dependencies>
+	  <module name="com.ibd.cohesive.report.lib"/>
+	   <module name="com.ibd.cohesive.reportEjb.lib"/>
+      <module name="deployment.CohesiveReportEngine.ear.CohesiveDatabase.jar"/>
+<module name="deployment.CohesiveReportEngine.ear.CohesiveBusiness-ejb.jar"/>
+    </dependencies>
+    <local-last value="true" />
+  </sub-deployment>  
+ 
+ 
+ <sub-deployment name="CohesiveRestBridge.war">
+<dependencies>
+      <module name="com.ibd.cohesive.report.lib"/>
+      <module name="com.ibd.cohesive.reportEjb.lib"/>
+</dependencies>
+    <local-last value="true" />
+</sub-deployment>
+  
+<!--<sub-deployment name="CohesiveReportWeb.war">
+    <dependencies>
+	  <module name="deployment.CohesiveReportEngine.ear.CohesiveReportEngine-ejb.jar"/>
+    </dependencies>
+	<exclusions>
+            <module name="org.apache.commons.logging" />
+   </exclusions> 
+    <local-last value="true" />
+  </sub-deployment>  
+-->
+
+  
+</jboss-deployment-structure>

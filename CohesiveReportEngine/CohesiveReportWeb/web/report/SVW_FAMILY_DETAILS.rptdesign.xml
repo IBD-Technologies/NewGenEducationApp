@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201806261756</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="studentId" id="6">
+            <text-property name="promptText">Enter Student ID</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="instituteId" id="7">
+            <text-property name="promptText">Enter Institute ID</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.data.oda.pojo" name="SVW_FAMILY_DETAILS" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>SynchronizeClassPath</name>
+                    <value>true</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClassPath</name>
+                    <value>dataSource/CohesiveReportEngine-ejb.jar;</value>
+                </ex-property>
+            </list-property>
+            <property name="pojoDataSetClassPath">dataSource/CohesiveReportEngine-ejb.jar;</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.data.oda.pojo.dataSet" name="SVW_FAMILY_DETAILS" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">STUDENT_ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">STUDENT_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_NAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_RELATIONSHIP</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_RELATIONSHIP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_OCCUPATION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_OCCUPATION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_EMAILID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_EMAILID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MEMBER_CONTACTNO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">MEMBER_CONTACTNO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">IMAGE_PATH</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">IMAGE_PATH</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VERSION_NUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">VERSION_NUMBER</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">STUDENT_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">MEMBER_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">MEMBER_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">MEMBER_RELATIONSHIP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">MEMBER_OCCUPATION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">MEMBER_EMAILID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">MEMBER_CONTACTNO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">IMAGE_PATH</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">VERSION_NUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">SVW_FAMILY_DETAILS</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">STUDENT_ID</property>
+                    <property name="nativeName">STUDENT_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">MEMBER_ID</property>
+                    <property name="nativeName">MEMBER_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">MEMBER_NAME</property>
+                    <property name="nativeName">MEMBER_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">MEMBER_RELATIONSHIP</property>
+                    <property name="nativeName">MEMBER_RELATIONSHIP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">MEMBER_OCCUPATION</property>
+                    <property name="nativeName">MEMBER_OCCUPATION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">MEMBER_EMAILID</property>
+                    <property name="nativeName">MEMBER_EMAILID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">MEMBER_CONTACTNO</property>
+                    <property name="nativeName">MEMBER_CONTACTNO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">IMAGE_PATH</property>
+                    <property name="nativeName">IMAGE_PATH</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">VERSION_NUMBER</property>
+                    <property name="nativeName">VERSION_NUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PojoQuery appContextKey="APP_CONTEXT_KEY_SVW_FAMILY_DETAILS" dataSetClass="com.ibd.cohesive.report.dbreport.dataSources.student.SVW_FAMILY_DETAILS_DataSource" version="1.0">
+    <ColumnMapping index="1" name="STUDENT_ID" odaDataType="String">
+        <Method name="getSTUDENT_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="2" name="MEMBER_ID" odaDataType="String">
+        <Method name="getMEMBER_ID"/>
+    </ColumnMapping>
+    <ColumnMapping index="3" name="MEMBER_NAME" odaDataType="String">
+        <Method name="getMEMBER_NAME"/>
+    </ColumnMapping>
+    <ColumnMapping index="4" name="MEMBER_RELATIONSHIP" odaDataType="String">
+        <Method name="getMEMBER_RELATIONSHIP"/>
+    </ColumnMapping>
+    <ColumnMapping index="5" name="MEMBER_OCCUPATION" odaDataType="String">
+        <Method name="getMEMBER_OCCUPATION"/>
+    </ColumnMapping>
+    <ColumnMapping index="6" name="MEMBER_EMAILID" odaDataType="String">
+        <Method name="getMEMBER_EMAILID"/>
+    </ColumnMapping>
+    <ColumnMapping index="7" name="MEMBER_CONTACTNO" odaDataType="String">
+        <Method name="getMEMBER_CONTACTNO"/>
+    </ColumnMapping>
+    <ColumnMapping index="8" name="IMAGE_PATH" odaDataType="String">
+        <Method name="getIMAGE_PATH"/>
+    </ColumnMapping>
+    <ColumnMapping index="9" name="VERSION_NUMBER" odaDataType="String">
+        <Method name="getVERSION_NUMBER"/>
+    </ColumnMapping>
+</PojoQuery>
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>IMAGE_PATH</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMAGE_PATH</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_CONTACTNO</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_CONTACTNO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_EMAILID</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_EMAILID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_ID</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_NAME</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_NAME</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_OCCUPATION</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_OCCUPATION</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MEMBER_RELATIONSHIP</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MEMBER_RELATIONSHIP</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STUDENT_ID</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STUDENT_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>VERSION_NUMBER</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VERSION_NUMBER</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>methodNameRegx</name>
+                    <value>get*</value>
+                </ex-property>
+                <ex-property>
+                    <name>pojoClass</name>
+                    <value>com.ibd.cohesive.report.dbreport.dataModels.student.SVW_FAMILY_DETAILS</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a3</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="8">
+            <column id="9"/>
+            <row id="10">
+                <cell id="11">
+                    <label id="18">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Table Report</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="12">
+                <cell id="13">
+                    <text id="19">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<H6>Instance ID:<VALUE-OF>params["instituteId"].value</VALUE-OF></H6>
+<BR>
+<H6>File Name:  <VALUE-OF>params["studentId"].value</VALUE-OF></H6>
+<BR>
+<H6>Table Name: <B>SVW_FAMILY_PERSON_DETAILS</B> </H6>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="14">
+                <cell id="15">
+                    <table id="78">
+                        <property name="dataSet">SVW_FAMILY_DETAILS</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">STUDENT_ID</property>
+                                <text-property name="displayName">STUDENT_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["STUDENT_ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_ID</property>
+                                <text-property name="displayName">MEMBER_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_NAME</property>
+                                <text-property name="displayName">MEMBER_NAME</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_RELATIONSHIP</property>
+                                <text-property name="displayName">MEMBER_RELATIONSHIP</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_RELATIONSHIP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_OCCUPATION</property>
+                                <text-property name="displayName">MEMBER_OCCUPATION</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_OCCUPATION"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_EMAILID</property>
+                                <text-property name="displayName">MEMBER_EMAILID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_EMAILID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MEMBER_CONTACTNO</property>
+                                <text-property name="displayName">MEMBER_CONTACTNO</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["MEMBER_CONTACTNO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">IMAGE_PATH</property>
+                                <text-property name="displayName">IMAGE_PATH</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["IMAGE_PATH"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VERSION_NUMBER</property>
+                                <text-property name="displayName">VERSION_NUMBER</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["VERSION_NUMBER"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="127"/>
+                        <column id="128"/>
+                        <column id="129"/>
+                        <column id="130"/>
+                        <column id="131"/>
+                        <column id="132"/>
+                        <column id="133"/>
+                        <column id="134"/>
+                        <column id="135"/>
+                        <header>
+                            <row id="79">
+                                <cell id="80">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="81">
+                                        <text-property name="text">STUDENT_ID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="82">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="83">
+                                        <text-property name="text">MEMBER_ID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="84">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="85">
+                                        <text-property name="text">MEMBER_NAME</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="86">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="87">
+                                        <text-property name="text">MEMBER_RELATIONSHIP</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="88">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="89">
+                                        <text-property name="text">MEMBER_OCCUPATION</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="90">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="91">
+                                        <text-property name="text">MEMBER_EMAILID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="92">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="93">
+                                        <text-property name="text">MEMBER_CONTACTNO</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="94">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="95">
+                                        <text-property name="text">IMAGE_PATH</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="96">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="97">
+                                        <text-property name="text">VERSION_NUMBER</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="98">
+                                <cell id="99">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="100">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">STUDENT_ID</property>
+                                    </data>
+                                </cell>
+                                <cell id="101">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="102">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_ID</property>
+                                    </data>
+                                </cell>
+                                <cell id="103">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="104">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_NAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="105">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="106">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_RELATIONSHIP</property>
+                                    </data>
+                                </cell>
+                                <cell id="107">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="108">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_OCCUPATION</property>
+                                    </data>
+                                </cell>
+                                <cell id="109">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="110">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_EMAILID</property>
+                                    </data>
+                                </cell>
+                                <cell id="111">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="112">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">MEMBER_CONTACTNO</property>
+                                    </data>
+                                </cell>
+                                <cell id="113">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="114">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">IMAGE_PATH</property>
+                                    </data>
+                                </cell>
+                                <cell id="115">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="116">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">VERSION_NUMBER</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="16">
+                <cell id="17"/>
+            </row>
+        </grid>
+    </body>
+</report>

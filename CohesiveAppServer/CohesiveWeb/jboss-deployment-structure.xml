@@ -1,0 +1,10 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+<deployment>
+    <dependencies>
+	<module name="com.ibd.cohesive.gateway.config"/>
+	<module name="com.ibd.cohesive.lib"/>
+<!--	<module name="com.ibd.cohesive.reportEjb.lib"/> -->
+	</dependencies>
+    </deployment>
+</jboss-deployment-structure>

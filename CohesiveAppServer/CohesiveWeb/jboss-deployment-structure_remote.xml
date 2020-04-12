@@ -1,0 +1,12 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+<deployment>
+    <dependencies>
+	<module name="com.ibd.cohesive.gateway.config"/>
+	</dependencies>
+    <resources>
+      <resource-root path="CohesiveLibrary.jar" />
+	  <resource-root path="CohesiveInterfacesLibrary.jar" />
+	 </resources>
+ </deployment>
+</jboss-deployment-structure>

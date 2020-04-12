@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 23, 2018, 1:44:41 PM
+    Author     : Munish kumar.B
+*/
+
+.cohesive_body{
+	background-color: #ffffff;
+    font-family: arial;
+}
+
+/*.cohesive_calendar {
+	width: 100%;
+       /* background:#4a65a0;
+        color:white;*/
+/*.cohesive_select_calender{
+       /*border:2px solid blue;*/
+     /* margin-left: 33%;
+       margin-right: 33%;
+       margin-top: 1%; 
+       width:34%;
+       
+   
+}
+
+@media screen and (max-width: 1000px){
+         .cohesive_select_calender{
+           margin-left:5%;
+           margin-right:5%;
+           width:90%;
+           margin-top: 2%;
+    }
+}/*
+.form-check-input:unchecked::before{
+    background-color: green;
+   
+}*/
+.cohesive_calender_workingday{
+    background-color: white;
+    max-block-size: 15px;
+}
+.cohesive_calender_holiday{
+    background:#FFC200;
+    color:white;
+    max-block-size: 15px;
+}
+.cohesive_calender_Leave{
+    background:blue;
+    color:white;
+    max-block-size: 15px;
+}
+.cohesive_calender_Absent{
+    background:Red;
+    color:white;
+   max-block-size: 15px;
+}
+.cohesive_control{
+    padding:10%;
+}
+.cohesive_border{
+     width:100%;
+    border:1px groove blue;
+}
+.cohesive_topmargin{
+    margin-top:1%;
+}

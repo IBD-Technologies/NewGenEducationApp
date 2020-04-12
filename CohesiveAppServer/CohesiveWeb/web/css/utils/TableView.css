@@ -1,0 +1,17 @@
+.svwRecCount{
+	color:white;
+}
+/*.nav-link {
+    display: block;
+    padding: .6rem ;
+}
+*/
+.ContentTabNavlink{
+display: block;
+padding: .6rem ;
+}
+
+.ContentTabNavlink1{
+display: block;
+/*padding: .4rem ;*/
+}

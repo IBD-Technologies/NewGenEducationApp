@@ -1,0 +1,32 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+<ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+<deployment>
+    <dependencies>
+	<module name="com.ibd.cohesive.config"/>
+	</dependencies>
+   
+  </deployment>
+<sub-deployment name="CohesiveDatabase.jar">
+<dependencies>
+      <module name="com.ibd.cohesive.lib"/>
+</dependencies>
+    <local-last value="true" />
+</sub-deployment>      
+
+<sub-deployment name="CohesiveBusiness-ejb.jar">
+    <dependencies>
+	  <module name="com.ibd.cohesive.lib"/>
+      <module name="deployment.CohesiveBackend.ear.CohesiveDatabase.jar"/>
+    </dependencies>
+    <local-last value="true" />
+  </sub-deployment>  
+  
+  <sub-deployment name="CohesiveRestBridge.war">
+    <dependencies>
+	  <module name="com.ibd.cohesive.lib"/>
+    </dependencies>
+    <local-last value="true" />
+  </sub-deployment>  
+  
+  
+</jboss-deployment-structure>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.j2ee.ejbjarproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
+            <name>CohesiveBusiness-ejb</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <included-library dirs="200">reference.CohesiveLibrary.jar</included-library>
+            <included-library dirs="100">reference.CohesiveDatabase.dist</included-library>
+            <included-library dirs="200">file.reference.accessors-smart-1.2.jar</included-library>
+            <included-library dirs="200">file.reference.asm-5.0.4.jar</included-library>
+            <included-library dirs="200">file.reference.jcip-annotations-1.0-1.jar</included-library>
+            <included-library dirs="200">file.reference.json-smart-2.3.jar</included-library>
+            <included-library dirs="200">file.reference.nimbus-jose-jwt-7.0.1.jar</included-library>
+            <included-library dirs="200">file.reference.aspectjrt-1.8.2.jar</included-library>
+            <included-library dirs="200">file.reference.aspectjweaver.jar</included-library>
+            <included-library dirs="200">file.reference.commons-codec-1.11.jar</included-library>
+            <included-library dirs="200">file.reference.commons-logging-1.1.3.jar</included-library>
+            <included-library dirs="200">file.reference.freemarker-2.3.9.jar</included-library>
+            <included-library dirs="200">file.reference.httpclient-4.5.9.jar</included-library>
+            <included-library dirs="200">file.reference.httpcore-4.4.11.jar</included-library>
+            <included-library dirs="200">file.reference.ion-java-1.0.2.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-annotations-2.6.0.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-core-2.6.7.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-databind-2.6.7.2.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-dataformat-cbor-2.6.7.jar</included-library>
+            <included-library dirs="200">file.reference.javax.mail-api-1.4.6.jar</included-library>
+            <included-library dirs="200">file.reference.jmespath-java-1.11.604.jar</included-library>
+            <included-library dirs="200">file.reference.joda-time-2.8.1.jar</included-library>
+            <included-library dirs="200">file.reference.netty-buffer-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-codec-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-codec-http-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-common-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-handler-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-resolver-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.netty-transport-4.1.17.Final.jar</included-library>
+            <included-library dirs="200">file.reference.spring-beans-3.0.7.RELEASE.jar</included-library>
+            <included-library dirs="200">file.reference.spring-context-3.0.7.RELEASE.jar</included-library>
+            <included-library dirs="200">file.reference.spring-core-3.0.7.RELEASE.jar</included-library>
+            <included-library dirs="200">file.reference.spring-test-3.0.7.RELEASE.jar</included-library>
+            <included-library dirs="200">reference.CohesiveInterfacesLibrary.jar</included-library>
+            <included-library dirs="200">file.reference.aws-java-sdk-1.11.604-javadoc.jar</included-library>
+            <included-library dirs="200">file.reference.aws-java-sdk-1.11.604-sources.jar</included-library>
+            <included-library dirs="200">file.reference.aws-java-sdk-1.11.604.jar</included-library>
+            <included-library dirs="200">file.reference.aws-swf-build-tools-1.1.jar</included-library>
+            <source-roots>
+                <root id="src.dir"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.src.dir"/>
+            </test-roots>
+        </data>
+        <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
+            <definitions>..\.\lib\nblibraries.properties</definitions>
+        </libraries>
+        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
+            <reference>
+                <foreign-project>CohesiveDatabase</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>CohesiveInterfacesLibrary</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>CohesiveLibrary</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+        </references>
+    </configuration>
+</project>

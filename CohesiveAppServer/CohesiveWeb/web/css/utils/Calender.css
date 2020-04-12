@@ -1,0 +1,90 @@
+.ui-datepicker {
+    width: 100%;
+    padding: .2em .2em 0;
+    display: none;
+}
+.ui-widget-header {
+    border: 1px solid #ddd;
+    background:#FFFFFF;
+    color:#228272;
+    font-weight: bold;
+}
+.ui-datepicker .ui-datepicker-prev .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em;
+    background: #FFFFFF;
+}
+
+td.holiday.red a.ui-state-default{
+    background: #f6f6f6;
+    color: #f00;
+    font-weight: bold;
+        opacity: unset;
+}
+td.workingday a.ui-state-default {
+    background: #f6f6f6;
+    color: #0f0;
+    font-weight: bold;
+        opacity: unset;
+}
+
+td.holiday.red a.ui-state-active{
+    background: #f6f6f6;
+    color: #f00;
+    font-weight: bold;
+        opacity: unset;
+}
+td.workingday a.ui-state-active {
+    background: #f6f6f6;
+    color: #0f0;
+    font-weight: bold;
+        opacity: unset;
+}
+td.holiday.yellow a.ui-state-default {
+    background: #f6f6f6;
+    color: #ffc107;
+    font-weight: bold;
+        opacity: unset;
+}
+
+td.holiday.yellow a.ui-state-active{
+    background: #f6f6f6;
+    color: #ffc107;
+    font-weight: bold;
+        opacity: unset;
+}
+
+td.holiday.blue a.ui-state-default {
+    background: #f6f6f6;
+    color: #004085;
+    font-weight: bold;
+        opacity: unset;
+}
+
+td.holiday.blue a.ui-state-active{
+    background: #f6f6f6;
+   color: #004085;
+    font-weight: bold;
+        opacity: unset;
+}
+
+.blue
+{
+   color: #004085; 
+}
+
+.red
+{
+  color: #f00;  
+}
+
+.yellow
+{
+  color: #ffc107;  
+}
+.green
+{
+  color: #0f0;  
+}

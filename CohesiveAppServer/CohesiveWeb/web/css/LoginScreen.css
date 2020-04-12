@@ -1,0 +1,229 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 7, 2018, 2:02:45 AM
+    Author     : Munish
+*/
+
+html{
+    height: 100%;
+
+}
+html body {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#appContent {
+  width: 100%;
+  overflow-y: auto;
+}
+header {
+   /* min-height:11%;*/
+    width: 100%;
+}
+footer {
+    /*min-height: 30px;*/
+    width: 100%;
+}
+
+.loginContainer{
+margin-bottom:auto;
+margin-top:auto;
+}
+.cohesive_brand img{
+    width:100px;
+    height:60px;
+	color:white;
+}	
+/*.cohesive_brand1 img{
+    width: 20%;
+    height: 10%;
+}	
+*/
+/*.NavbarBorder{
+	
+	 border-top: 1px solid #4a65a0;
+	  border-bottom: 2px solid #4a65a0;
+}*/
+/*.loginPageBorder{
+	
+	  border-top: 1px solid #4a65a0;
+	  border-bottom: 1px solid #4a65a0;
+	  border-left: 1px solid #4a65a0;
+	  border-right: 1px solid #4a65a0;
+}
+*/
+.d-inline-block {
+    height: 30px;
+    display: inline-block!important;
+    
+}
+.align-top {
+    vertical-align: top!important;
+}
+.cohesive_brand{
+    line-height: 3;
+    padding:0;
+    font-size: 1rem;
+    color:white;
+}
+.cohesive_navbar
+{
+    /*background: linear-gradient(#E1F5FE,#C5CAE9);*/
+    background:#720559;
+    color:  #FFFFFF;
+}
+.d-inline-block {
+    height: 30px;
+    display: inline-block!important;
+    
+}
+.align-top {
+    vertical-align: top!important;
+}
+.cohesiveGroupText{
+background:#228272;
+color: #FFFFFF;
+}
+.blockquote-footer::before {
+    content: none;
+}
+
+/*.mainscreenHeader{
+    min-height: 18%;
+    max-height: 18%;
+}*/
+.mainscreenContent{
+    min-height: 82%;
+    max-height: 82%;
+}
+/*.subscreenHeader{
+    min-height: 14%;
+    max-height: 14%;
+	 border-bottom: 2px solid #228272;
+	 border-top:  2px solid #228272;
+}*/
+.btn-primary {
+    color: #fff;
+    background-color: #720559;
+    border-color: #720559;
+}
+a {
+    color: #228272;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+    color:  #228272;
+    text-decoration: none;
+}
+.form-control:focus {
+        border-color:#228272;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    } 
+.form-control:disabled, .form-control[readonly] {
+    background-color: #d4edda;
+    opacity: 1;
+}
+.cardImage{
+  background-image: url('../img/Service/customer-service.svg');
+  background-size:cover;
+}
+.cohesiveForgotUserName{
+text-decoration:none;
+float:left	
+}
+.cohesiveForgotPassword{
+text-decoration:none;
+float:right;
+}
+.mainScreenContentColor{
+color:#720559;
+}
+.cohesiveFeatureScreenImage{
+        /*margin-top:50%;
+		margin-bottom:50%;*/
+		
+		width:100%;
+		height:90px;
+	   object-fit:cover;
+   }
+  .navMenuColor{
+  color:#FFFFFF;
+  
+  }	  
+   
+.btn-primary {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.loginpageImage{
+	height:90px;
+}
+.cohesiveCardHeader{
+padding:0;
+color:#720559;
+background:#FFFFFF;
+}
+.cohesiveFooter{
+background:#720559;
+color:#FFFFFF;
+}
+.coheivelogincard{
+   border:0px; 
+}
+.LoginscreenHeader{
+    min-height: 15%;
+    max-height: 15%;
+}
+.LoginscreenContent{
+    min-height: 78%;
+    max-height: 78%;
+}
+
+@media (max-height: 700px) {
+  .LoginscreenHeader{
+    min-height: 22%;
+    max-height: 22%;
+}
+.LoginscreenContent{
+    min-height: 70%;
+    max-height: 70%;
+}
+
+.subscreenFooter{
+    min-height: 8%;
+    max-height: 8%;
+    color: white;
+    padding: 0;
+    /*background:#228272;*/
+}
+}
+.subscreenFooter{
+    min-height: 7%;
+    max-height: 7%;
+    color: white;
+    padding: 0;
+    /*background:#228272;*/
+}
+
+   
+   

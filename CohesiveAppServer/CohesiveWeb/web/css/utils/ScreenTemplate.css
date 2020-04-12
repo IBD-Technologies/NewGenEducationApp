@@ -1,0 +1,402 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 7, 2018, 2:02:45 AM
+    Author     : Munish
+*/
+
+html{
+    height: 100%;
+
+}
+html,body {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#appContent {
+  width: 100%;
+  overflow-y: auto;
+}
+#subscreenContent {
+  width: 100%;
+  overflow-y: auto;
+}
+.container{
+    min-height:100%;
+    margin-bottom: -15%; /* Put negative height of the footer here */
+    padding-bottom: 15%; /* Put height of the footer here. Needed for higher than screen height pages */
+}
+#schoolContent {
+
+width: 100%;
+  overflow-y: auto;
+}
+
+
+
+
+
+header {
+   /* min-height:11%;*/
+    width: 100%;
+}
+footer {
+    /*min-height: 30px;*/
+    width: 100%;
+}
+
+
+.mainscreenHeader{
+    min-height: 15%;
+    max-height: 15%;
+/*box-sizing: border-box !important;*/
+}
+.mainscreenContent{
+    min-height: 85%;
+    max-height: 85%;
+/*box-sizing: border-box !important;*/
+}
+
+@media (max-height: 600px) {
+  
+  .mainscreenHeader{
+    min-height: 20%;
+    max-height: 20%;
+}
+.mainscreenContent{
+    min-height: 80%;
+    max-height: 80%;
+}
+}
+
+@media (min-height: 600px) {
+  
+  .mainscreenHeader{
+    min-height: 18%;
+    max-height: 18%;
+}
+.mainscreenContent{
+    min-height: 82%;
+    max-height: 82%;
+}
+}
+
+
+@media (min-height: 800px) {
+  
+  .mainscreenHeader{
+    min-height: 15%;
+    max-height: 15%;
+}
+.mainscreenContent{
+    min-height: 85%;
+    max-height: 85%;
+}
+}
+
+.subscreenHeader{
+    min-height: 15%;
+    max-height: 15%;
+	 /*border-bottom: 2px solid #228272;
+	 border-top:  2px solid #228272;*/
+  /*box-sizing: border-box !important;  */    
+}
+
+.subscreenContent{
+    position: relative;
+    max-height: 70%;
+    min-height: 70%;
+}
+.reportScreenContent
+{
+    position: relative;
+    max-height: 85%;
+    min-height: 85%;
+}
+/*.subscreenContent1{
+    position:relative;
+    max-height: 73%;
+    min-height: 73%;
+}*/
+.subscreenFooter{
+    position:relative;
+    min-height: 15%;
+    max-height: 15%;
+    color: white;
+    padding: 0;
+    background:#228272;
+}
+
+/* Integeration Testing*/
+/*.subscreenFooter1{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    min-height: 15%;
+    max-height: 15%;
+    color: white;
+    padding: 0;
+    background:#228272;
+}
+*/
+.ssHeading
+{
+ background:#228272;   
+ color: white;
+  padding: 0;
+}
+
+
+/*@media (max-height: 600px) {
+/*  
+  .mainscreenHeader{
+    min-height: 18%;
+    max-height: 18%;
+}
+.mainscreenContent{
+    min-height: 82%;
+    max-height: 82%;
+}
+*/
+/*
+.subscreenHeader{
+    min-height: 15%;
+    max-height: 15%;
+	 /*border-bottom: 2px solid #228272;
+	 border-top:  2px solid #228272;*/
+/*  box-sizing: border-box !important;       
+}
+
+.subscreenContent{
+    max-height: 65%;
+    min-height: 65%;
+}
+
+.subscreenFooter{
+    min-height: 20%;
+    max-height: 20%;
+    color: white;
+    padding: 0;
+    background:#228272;
+}
+
+
+}
+*/
+
+
+/*
+.subscreenHeader{
+    min-height: 18%;
+    max-height: 18%;
+	 border-bottom: 2px solid #228272;
+	 border-top:  2px solid #228272;
+}
+/*.subscreenHeadingContent{
+    min-height: 55%;
+    max-height: 55%;
+}*/
+/*
+.subscreenFooter{
+    min-height: 12%;
+    max-height: 12%;
+    color: white;
+    padding: 0;
+    background:#228272;
+}
+
+.subscreenContent{
+    max-height: 70%;
+    min-height: 70%;
+}
+*/
+.cohesive_border{
+    border-bottom:outset; 
+    border-top:inset;
+}
+.cohesive_border1{
+    border-bottom: outset;
+}
+
+.nav-justified .cohesiveFooter_navitem {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.subScreenOperationSection{
+	
+	 border-bottom: 2px solid #228272;
+}
+.cohesive_body{
+	background-color: #ffffff;
+        font-family: arial;
+}
+.customselect_Dropdown{
+	background:none;
+}
+.contentDetailTabNav{
+	 padding:0;
+ }
+.contentDetailTab{
+	background-color:#f8f9fa;
+	color:#228272;
+}
+.btn-warning1 {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.cohesive_calender_workingday{
+    background-color: white;
+    max-block-size: 15px;
+}
+.cohesive_calender_holiday{
+    background:#FFC200;
+    color:white;
+    max-block-size: 15px;
+}
+.cohesive_calender_Leave{
+    background:blue;
+    color:white;
+    max-block-size: 15px;
+}
+.cohesive_calender_Absent{
+    background:Red;
+    color:white;
+   max-block-size: 15px;
+}
+.cohesive_control{
+    padding:10%;
+}
+
+.fc button {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    height: 2.1em;
+    padding: 0 .6em;
+    white-space: nowrap;
+    cursor: pointer;
+    background:#4a65a0;
+    color:#FFFFFF;
+}
+.CohesivePrimaryButton{
+    background-color:#228272;
+    border-color: #228272;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color:#228272;
+    border-	:#228272;
+}
+.form-control:focus {
+        border-color:#228272;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    } 
+.form-control:disabled, .form-control[readonly] {
+    background-color: #d4edda;
+    opacity: 1;
+}
+
+.form-control-plaintext:disabled, .form-control-plaintext[readonly] {
+    background-color: #d4edda;
+    opacity: 1;
+}
+a {
+    color: #228272;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.page-link:hover {
+    z-index: 2;
+    color: #228272;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #228272;
+    border-color: #228272;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #22826F;
+    background: #228272;
+    font-weight: normal;
+    color: #fff;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #FFFFFF;
+    background-color: #228272;
+    border-color: #228272;
+}
+.imgcontainer
+{
+   height:200px;
+   width:200px;
+}
+.input-group-text {
+
+background-color: #228272;
+color: white;
+
+
+}
+
+
+.nav-tabs {
+    border-bottom: unset;
+}
+
+.cohesive-embed-responsive{
+	position: relative;
+	display:block;
+	width:100%;
+	/*height:200%;*/
+        height:100%;
+        max-height:100%;
+        min-height:100%; 
+	height:-webkit-fill-available;
+	padding:0;
+	overflow:hidden;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+       background-color: #007bff;
+    border-color: #007bff;
+}
+

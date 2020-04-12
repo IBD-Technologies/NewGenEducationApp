@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="com.ibd.cohesive.lib">
+
+    <resources>
+              
+             
+        <resource-root path="CohesiveLibrary.jar"/>
+        
+        <resource-root path="CohesiveInterfacesLibrary.jar"/>      
+
+        <resource-root path="ReportInterfacesLibrary.jar"/>
+
+    </resources>
+<dependencies>
+<!-- <module name="com.ibd.cohesive.config"/> -->
+ <module name="com.ibd.cohesive.gateway.config"/>
+ <module name ="javax.json.api"/>
+</dependencies>
+ 
+
+
+</module>
