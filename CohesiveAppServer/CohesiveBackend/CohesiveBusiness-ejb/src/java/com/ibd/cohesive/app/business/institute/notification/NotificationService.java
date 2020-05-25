@@ -1261,6 +1261,7 @@ public class NotificationService implements INotificationService{
                                     status=false;
                                     errhandler.log_app_error("BS_VAL_037","sms");
                                 }
+                               else 
                      tc.rollBack(session, dbSession);
                      
                 }
@@ -1281,6 +1282,7 @@ public class NotificationService implements INotificationService{
                         status=false;
                         errhandler.log_app_error("BS_VAL_037","email");
                     }
+                    else
                  tc.rollBack(session, dbSession);
                }
         }

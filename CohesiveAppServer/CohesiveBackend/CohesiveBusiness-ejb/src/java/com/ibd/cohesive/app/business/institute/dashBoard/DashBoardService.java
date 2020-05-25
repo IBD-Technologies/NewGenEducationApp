@@ -50,6 +50,12 @@ import javax.naming.NamingException;
 /**
  *
  * @author DELL
+ * **************
+ *       Change search Tag:C001 
+ *       Reason : Individual calls for each Dashboard data fetching
+ *       By  : Rajkumar.V
+ * ****************
+ * 
  */
 @Remote(IDashBoardService.class)
 @Stateless
@@ -284,21 +290,80 @@ public class DashBoardService implements IDashBoardService{
         calendar.setTime(formatter.parse(currentDateTime));
         
         if(userType.equals("A")){
-           
-            setTeacherLeaveDetails();
-           
-            setStudentLeaveDetails();
-           
-            setUnAuthPending();
+          //C001 Starts 
+            Map <String,String> map=new HashMap<String, String>();
+                    map=request.getReqHeader().getBusinessEntity();
+                    if (map.size()>0)
+                    {   
+                    for(Map.Entry<String,String> entry:map.entrySet())
+                    {
+                        if(entry.getValue().equals("Attendance"))
+                        {
+                            setTeacherLeaveDetails();
+                            setStudentLeaveDetails();
+                        }
+
+                        if(entry.getValue().equals("Queue")){
+                            setUnAuthPending();
+                        }
+                        if(entry.getValue().equals("SMS")){
+                            setSMSDetails();
+                        }
+                         if(entry.getValue().equals("Fee")){
+                            setFeeDetails();
+                        }
+                        
+
+                    }
+                  } 
+                else
+                    {      
+               setTeacherLeaveDetails();
+                setStudentLeaveDetails();     
+                setUnAuthPending();    
+                setSMSDetails();
+                setFeeDetails();
+                    }
+           //C001 Ends
             
-            setFeeDetails();
-           
-            setSMSDetails();  
             
             
-            
-        }if(userType.equals("T")){
-            
+        }
+        
+        else if(userType.equals("T")){
+             //C001 Starts
+            Map <String,String> map=new HashMap<String, String>();
+                    map=request.getReqHeader().getBusinessEntity();
+                if(map.size() >0)
+                 { 
+                    for(Map.Entry<String,String> entry:map.entrySet())
+                    {
+                        if(entry.getValue().equals("Attendance"))
+                        {
+                            //setTeacherLeaveDetails();
+                            //setStudentLeaveDetails();
+                           float totalInsWorkDays=bs.getNoOfWorkingDaysTillNow(instituteID, session, dbSession, inject);
+                           float leaveTakenThisYear=this.getTeacherLeaveCount();
+                           dashBoard.setTeacherWorkingDays(Float.toString(totalInsWorkDays));
+                           dashBoard.setTeacherLeaveDays(Float.toString(leaveTakenThisYear)); 
+                           setClassLeaveDetails(); 
+                        }
+
+                        if(entry.getValue().equals("Queue")){
+                         setUnAuthPending();
+                        }
+                       /* if(entry.getValue().equals("SMS")){
+                            setSMSDetails();
+                        }
+                         if(entry.getValue().equals("Fee")){
+                            setFeeDetails();
+                        }*/
+                        
+
+                    }
+                 }  
+              else
+                {     
             float totalInsWorkDays=bs.getNoOfWorkingDaysTillNow(instituteID, session, dbSession, inject);
             float leaveTakenThisYear=this.getTeacherLeaveCount();
             dashBoard.setTeacherWorkingDays(Float.toString(totalInsWorkDays));
@@ -306,7 +371,9 @@ public class DashBoardService implements IDashBoardService{
             
             setUnAuthPending();
             setClassLeaveDetails();
+                }
 //            setClassFeeDetails();
+ //C001 Ends
         }
         
         
@@ -1563,6 +1630,12 @@ public class DashBoardService implements IDashBoardService{
            status=false;
        }
        
+        //C001 starts
+                dbg("inside institute BusinessEntityValidation--->BusinessEntityValidation");
+                if(!BusinessEntityValidation(errhandler)){
+                    status=false;
+                }
+        //C001 Ends    
        
        dbg("end of institute selectBoxMaster--->businessValidation"); 
        }catch(BSProcessingException ex){
@@ -1578,6 +1651,48 @@ public class DashBoardService implements IDashBoardService{
         }
     return status;
    }
+//C001 starts      
+  private boolean BusinessEntityValidation(ErrorHandler errhandler)throws BSProcessingException,BSValidationException{
+        boolean status=true;
+        try{
+            dbg("inside dashboard admin business entity validation");
+            Map <String,String> map=request.getReqHeader().getBusinessEntity();
+           
+            for(Map.Entry<String,String> entry:map.entrySet()) {
+
+                if (!(entry.getKey().equals("dataRequest"))) {
+                    status = false;
+                    errhandler.log_app_error("BS_VAL_003", "Business Entity");
+                }
+                else if(!(entry.getValue().equals("Attendance") 
+                        || entry.getValue().equals("Queue") 
+                        || entry.getValue().equals("SMS")
+                        || entry.getValue().equals("FEE")))
+                    {
+                        status = false;
+                        errhandler.log_app_error("BS_VAL_003", "Business Entity");
+
+                    }
+                }
+
+
+
+            dbg("end of dashboard admin business entity validation");
+        }catch (Exception ex) {
+            dbg(ex);
+            throw new BSProcessingException("Exception" + ex.toString());
+
+        }
+
+        return status;
+
+    }
+  
+ //C001 Ends
+  
+
+      
+      
     private boolean filterMandatoryValidation(ErrorHandler errhandler)throws BSProcessingException,BSValidationException{
       boolean status=true;
         try{
@@ -1587,7 +1702,7 @@ public class DashBoardService implements IDashBoardService{
          
          
         
-         
+          
           
          
           

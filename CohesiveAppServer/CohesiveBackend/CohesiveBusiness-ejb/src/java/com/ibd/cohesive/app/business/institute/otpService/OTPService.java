@@ -57,7 +57,12 @@ import javax.naming.NamingException;
 /**
  *
  * @author DELL
- */
+Change Tag:CH001
+Change Desc: OTP error response fails , Audit node is not required in both request and response
+Chnaged By : Rajkumar.V
+Date:16-05-2020
+
+*/
 @Remote(IOTPService.class)
 
 @Stateless
@@ -229,18 +234,19 @@ public class OTPService implements IOTPService{
       dbg("inside BusinessService--->buildSuccessResponse");    
 //      JsonObject requestHeader=request.getJsonObject("header");
       JsonObject requestBody=request.getJsonObject("body");
-      JsonObject requestAudit=request.getJsonObject("audit");
+      //JsonObject requestAudit=request.getJsonObject("audit"); //CH001 changes
       
       JsonArray errorArray=Json.createArrayBuilder().add(Json.createObjectBuilder().add("errorCode", "SUCCESS")
                                                              .add("errorMessage", "SUCCESSFULLY PROCESSED")).build();
 
+      
     
       JsonObject responseHeader=Json.createObjectBuilder().add("status", "success").build();
       
      
           jsonResponse=Json.createObjectBuilder().add("header",responseHeader)
                                                  .add("body",requestBody)
-                                                 .add("audit",requestAudit)
+                                               //  .add("audit",requestAudit) //CH001 changes
                                                  .add("error",errorArray);
           
           
@@ -270,7 +276,7 @@ public class OTPService implements IOTPService{
       try{
       dbg("inside BusinessService--->buildSuccessResponse");    
       JsonObject requestBody=request.getJsonObject("body");
-      JsonObject requestAudit=request.getJsonObject("audit");
+      //JsonObject requestAudit=request.getJsonObject("audit"); //CH001 changes
       
       JsonArray errorArray=this.getErrorJson(p_exceptionName);
 
@@ -278,7 +284,7 @@ public class OTPService implements IOTPService{
      
           jsonResponse=Json.createObjectBuilder().add("header",responseHeader)
                                                         .add("body",requestBody)
-                                                         .add("audit",requestAudit)
+                                                       //  .add("audit",requestAudit) //CH001 changes
                                                         .add("error",errorArray);
           
 
@@ -320,14 +326,16 @@ public class OTPService implements IOTPService{
                String l_pkey=l_errorCode;
                ArrayList<String>l_errorRecord=pds.readRecordPData(session,dbSession,"APP"+i_db_properties.getProperty("FOLDER_DELIMITER")+"Cohesive"+i_db_properties.getProperty("FOLDER_DELIMITER")+"Cohesive","APP","ERROR_MASTER",l_pkey);
               l_errorMessage=l_errorRecord.get(1).trim();
-               errorBuilder.add(Json.createObjectBuilder().add("errorCode", l_errorCode)
+              l_errorMessage=l_errorMessage + ",Please enter valid details";//CH001
+              errorBuilder.add(Json.createObjectBuilder().add("errorCode", l_errorCode)
                                                   .add("errorMessage", l_errorMessage));
            }else{
            if(l_errorParam.contains(",")){
            String[] l_errorParamArr=l_errorParam.split(",");
            dbg("error code"+l_errorCode);
             l_errorMessage=bs.getErrorMessage(l_errorCode,l_errorParamArr,inject,session,dbSession);
-           errorBuilder.add(Json.createObjectBuilder().add("errorCode", l_errorCode)
+          l_errorMessage=l_errorMessage + ",Please enter valid details";//CH001
+            errorBuilder.add(Json.createObjectBuilder().add("errorCode", l_errorCode)
                                                   .add("errorMessage", l_errorMessage));
            }else{
               String l_pkey=l_errorCode;
@@ -336,6 +344,7 @@ public class OTPService implements IOTPService{
               if(l_errorMessage.contains("$1")){
                   l_errorMessage=l_errorMessage.replace("$1", l_errorParam);
               }
+              l_errorMessage=l_errorMessage + ",Please enter valid details";//CH001
                errorBuilder.add(Json.createObjectBuilder().add("errorCode", l_errorCode)
                                                   .add("errorMessage", l_errorMessage));
            }

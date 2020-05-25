@@ -14,6 +14,7 @@ import javax.naming.NamingException;
 import com.ibd.businessViews.IResourceTokenService;
 import com.ibd.cohesive.app.Oauth.AuthServer.TokenValidateService;
 import com.ibd.cohesive.util.JWEInput;
+import com.ibd.cohesive.util.exceptions.BSValidationException;
 import javax.ejb.Remote;
 
 /**
@@ -52,6 +53,12 @@ public class ResourceTokenService implements IResourceTokenService{
               IResourceTokenProvider provider=inject.getTokenProvider();
               token=  provider.createResourceToken(jweip,service,session);
               }
+              else
+              {
+                  
+                 throw (new BSValidationException("BS_VAL_100~Token Validation is not success")); 
+              }
+                 
           }
     catch(Exception ex) {
             dbg(ex);

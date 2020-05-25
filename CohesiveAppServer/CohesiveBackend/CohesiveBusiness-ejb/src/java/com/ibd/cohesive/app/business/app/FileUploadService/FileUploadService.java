@@ -36,6 +36,11 @@ import javax.naming.NamingException;
 /**
  *
  * @author IBD Technologies
+ * 
+ * Change Ref:CH001
+ * Change By :Rajkumar
+ * Change Reason : File upload validation changes
+ * Change Date:21-05-2020
  */
 @Remote(IFileUploadService.class)
 @Stateless
@@ -101,7 +106,18 @@ public class FileUploadService implements IFileUploadService {
         if(!(extn.equals("pdf")))
              return false;
         
-     }
+     }//CH001 starts
+    else
+    {
+        
+    
+        if(!(extn.equals("jpeg") ||extn.equals("png")||extn.equals("jpg")||extn.equals("bmp")||extn.equals("gif")||extn.endsWith("tiff") ||extn.endsWith("pdf")||extn.endsWith("doc")||extn.endsWith("docx")))
+             return false;
+        
+     
+    } 
+    //CH001 Ends
+     
     
     return true;  
   }
