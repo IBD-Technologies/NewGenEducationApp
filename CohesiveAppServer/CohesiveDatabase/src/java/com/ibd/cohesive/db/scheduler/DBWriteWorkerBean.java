@@ -39,6 +39,13 @@ import javax.naming.NamingException;
 /**
  *
  * @author DELL
+ * ********************
+ * Change Tag :CH001
+ * Reason : Write service overwrites the content
+ * By : Rajkumar.V
+ * *********************
+ * 
+ * 
  */
 @Singleton
 @ConcurrencyManagement(BEAN)
@@ -56,7 +63,7 @@ public class DBWriteWorkerBean implements IDBWriteWorkerBean {
 //        session = new CohesiveSession();
 //        dbSession = new DBSession(session);
     }
-    @Lock(WRITE)
+   // @Lock(WRITE) //CH001 change 
     public synchronized void doTimerWork(CohesiveSession p_session,DBSession p_dbSession) throws DBProcessingException,DBValidationException {
 //       boolean l_session_created_now=false;
        Future<String> Result1 = null;
@@ -69,11 +76,11 @@ public class DBWriteWorkerBean implements IDBWriteWorkerBean {
 //        dbSession.createDBsession(session);
 //        l_session_created_now=session.isI_session_created_now();
 
-        synchronized(lock1){
+        //synchronized(lock1){ //  //CH001 Changs
             if (!busy.compareAndSet(false, true)) {
                return;
            }
-        }
+      //  }
         l_sessionIdentifier=p_session.getI_session_identifier().toString();
         
         IDBWriteBufferService write=dbdi.getDBWriteService();

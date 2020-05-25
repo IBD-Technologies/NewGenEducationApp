@@ -78,6 +78,12 @@ import javax.naming.NamingException;
   Changed-on:1-11-2018
   Change-Reason:Testing
   Search Tag: Cohesive1_Dev_3
+ ***********************************
+  Change Tag:C001
+  Change Reason : If there is U and Position Zero record in write buffer , it does not work.Bug fixing.  
+   By   : Rajkumar.v
+
+
 */
 public class IBDFileUtil implements IIBDFileUtil {
 
@@ -172,7 +178,7 @@ public class IBDFileUtil implements IIBDFileUtil {
             }
              */ 
             dbg("inside sequential read ->p_file_name"+p_file_name);
-             dbg("inside sequential read ->p_table_id"+p_table_id);
+                dbg("inside sequential read ->p_table_id"+p_table_id);
              for(String s:p_pkey){
                   dbg("p_pkeyyy"+s);
              }
@@ -207,6 +213,7 @@ public class IBDFileUtil implements IIBDFileUtil {
                         if (p_pkey.length == 0 && p_table_id == 0) {
                             l_records.add(samp);
                             par.setI_position(-1);
+                            
                         } else if (String.valueOf(p_table_id).equals(l_column_values[0])) {
                             dbg("in IBDFileUtil->sequentialRead->inside IF");
 
@@ -319,9 +326,12 @@ public class IBDFileUtil implements IIBDFileUtil {
 
             
             
-            
-            
-            
+            //C001 starts 
+            if(l_records == null ||l_records.size()==0)
+            {   
+            par.setI_position(-1);
+            }
+           //C001 Ends 
             par.setI_records(l_records);
 
             
@@ -744,6 +754,12 @@ public Map<String, Map<String,DBRecord>> sequentialRead(String p_file_name,Cohes
         if(Files.exists(l_src_path)&&Files.notExists(l_dest_path)){
             dbg("file is copied from actual path to temp path");
            Files.copy(l_src_path, l_dest_path);
+           /*if (p_temp_path.toString().contains("BATCH"))
+              {
+                  Path test = Paths.get("/cohesive/log/temp+"+System.currentTimeMillis()+".dbf");
+                  Files.copy(l_src_path,test);   
+                   }  */     
+           
         }
         
            dbg("end of copyFileToTemp---->p_file_path");
@@ -1593,6 +1609,12 @@ public Map<String, Map<String,DBRecord>> sequentialRead(String p_file_name,Cohes
                  dbg("inside file existence check in copy file to actual");
                  Files.copy(l_src_path, l_dest_path,REPLACE_EXISTING);
                  dbg("file is copied from temp path to actual path");
+             /*    
+                  if (l_src_path.toString().contains("BATCH"))
+              {
+                  Path test = Paths.get("/cohesive/log/actual+"+System.currentTimeMillis()+".dbf");
+                  Files.copy(l_src_path,test);   
+                   }  */    
              }
              
              }

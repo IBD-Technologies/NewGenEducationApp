@@ -320,15 +320,15 @@ public class DBTempSegmentService implements IDBTempSegmentService{
         
           }catch(DBValidationException ex){
               
-              if(ex.toString().contains("DB_VAL_000")){
+              if(ex.toString().contains("DB_VAL_000")||ex.toString().contains("DB_VAL_011")){
                   p_session.getErrorhandler().removeSessionErrCode("DB_VAL_000");
-                  
+                  p_session.getErrorhandler().removeSessionErrCode("DB_VAL_011");
                   boolean comeOut=false;
                   
                   while(!comeOut){
                   
                       if(!writeBuffer.checkFileExistenceInWriteBuffer(p_fileName, p_session)){
-                             Thread.sleep(2000);
+                             Thread.sleep(100);
                           dbrec= readBuffer.readRecord(p_fileName, p_fileType, p_table_name, p_pkey, p_session,p_dbSession);
 
                           comeOut=true;
@@ -753,7 +753,7 @@ public class DBTempSegmentService implements IDBTempSegmentService{
     
 //    @Lock(LockType.READ)
 //    public Map<String, Map<String,DBRecord>>getFileFromTempSegment(String fileNameKey,CohesiveSession p_session,DBSession p_dBSession)throws  DBProcessingException{
-     public  ConcurrentHashMap<String, ConcurrentHashMap<String,DBRecord>>getFileFromTempSegment(String fileNameKey,CohesiveSession p_session,DBSession p_dBSession)throws  DBProcessingException{
+     public   ConcurrentHashMap<String, ConcurrentHashMap<String,DBRecord>>getFileFromTempSegment(String fileNameKey,CohesiveSession p_session,DBSession p_dBSession)throws  DBProcessingException{
 
 //      boolean l_session_created_now=false;
       ConcurrentHashMap<String, ConcurrentHashMap<String,DBRecord>> fileMap;
@@ -783,8 +783,8 @@ public class DBTempSegmentService implements IDBTempSegmentService{
            
            
 //           fileMap= tempSegmentMap.get(fileNameKey);
-//          return fileUtil.cloneFile(fileMap);
-           return fileMap;
+//        return fileUtil.cloneFile(fileMap);
+         return fileMap;
         }else{
         dbg("inside DBTempSegment---->getFileFromTempSegment--->temp segement map doesn't contains  fileNameKey",p_session);
             return null;
@@ -808,7 +808,7 @@ public class DBTempSegmentService implements IDBTempSegmentService{
     }
     }
      
- public  DBRecord getRecordFromTempSegment(String fileNameKey,String pTableName,String pKey,CohesiveSession p_session,DBSession p_dBSession)throws  DBProcessingException{
+ public  synchronized DBRecord getRecordFromTempSegment(String fileNameKey,String pTableName,String pKey,CohesiveSession p_session,DBSession p_dBSession)throws  DBProcessingException{
 //      boolean l_session_created_now=false;
     //  Map<String, Map<String,DBRecord>> fileMap;
       try{
@@ -900,7 +900,7 @@ public synchronized void removeRecordFromTempSegment(String fileNameKey,String p
                       //p_session.getErrorhandler().setSingle_err_code(single_error_code);//Integration changes
                       //p_session.getErrorhandler().log_error();
                       Exception ex= new Exception(single_error_code.toString());//Integration changes
-                      dbg(ex,p_session);
+                      //dbg(ex,p_session);
                      // throw new DBValidationException(p_session.getErrorhandler().getSession_error_code().toString()); 
                       
                   }
@@ -912,7 +912,7 @@ public synchronized void removeRecordFromTempSegment(String fileNameKey,String p
                      // p_session.getErrorhandler().setSingle_err_code(single_error_code);
                       //p_session.getErrorhandler().log_error();
                       Exception ex= new Exception(single_error_code.toString());//Integration changes
-                      dbg(ex,p_session);
+                      //dbg(ex,p_session);
                      // throw new DBValidationException(p_session.getErrorhandler().getSession_error_code().toString());
               }
               
@@ -926,7 +926,7 @@ public synchronized void removeRecordFromTempSegment(String fileNameKey,String p
                       //p_session.getErrorhandler().log_error();
                       //throw new DBValidationException(p_session.getErrorhandler().getSession_error_code().toString());
                        Exception ex= new Exception(single_error_code.toString());//Integration changes
-                       dbg(ex,p_session);    
+                      // dbg(ex,p_session);    
           }
 
 //        if(tempSegmentMap.get(fileNameKey).get(pTableName).containsKey(pKey)){

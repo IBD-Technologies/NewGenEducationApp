@@ -2090,7 +2090,7 @@ public synchronized boolean validateDBReadBuffer(String p_fileName,String p_tabl
 
 
 
-public  void SetRecordfromArchivalWrite(String p_fileName,String p_tableName,String pKey,DBRecord l_tempSegRec,CohesiveSession p_session,DBSession p_dbSession)throws DBProcessingException,DBValidationException{
+public synchronized void SetRecordfromArchivalWrite(String p_fileName,String p_tableName,String pKey,DBRecord l_tempSegRec,CohesiveSession p_session,DBSession p_dbSession)throws DBProcessingException,DBValidationException{
      ConcurrentHashMap<String, ConcurrentHashMap<String,DBRecord>>l_readBuffer_fileMap=null;
        
      try{

@@ -59,6 +59,12 @@ import javax.naming.NamingException;
 /**
  *
  * @author IBD Technologies
+ * *************
+ * Change Tag:C001
+ * Change Reason : If there is U and Position Zero record in write buffer , it does not work.Bug fixing.  
+ *  By   : Rajkumar.v
+ * 
+ * 
  */
 @DependsOn({"LockService","DBWaitBuffer","MetaDataService"})
 @Stateless
@@ -443,11 +449,14 @@ public class PhysicalIOService implements IPhysicalIOService {
                        dbg("in physicalIO service ->write->par.getI_position()" + par.getI_position());
                        long l_position = par.getI_position();
                        dbg("position in delete");
+                       if(par.getI_records().size() > 0 && l_position !=-1 ){ //C001  
                        fc.position(l_position);
                        fc.write(ByteBuffer.wrap(l_record.getBytes(Charset.forName("UTF-8"))));
                        dbg("before archival write call");
                        archivalWrite(p_fileName,dbRec.getOperation(),l_record,l_position,writeSessionID);
-                       dbg("after archival write call");   
+                       dbg("after archival write call");
+                       }//C001 
+                       
                     }else{
                        fc.position(dbRec.getPosition());
                        fc.write(ByteBuffer.wrap(l_record.getBytes(Charset.forName("UTF-8"))));
@@ -493,18 +502,18 @@ public class PhysicalIOService implements IPhysicalIOService {
                           dbg("position"+l_position);
                           
                           
-                          
-                          if(l_position==0&&par.getI_records().size()==0){
+                          if(par.getI_records().size() == 0 && l_position ==-1 ){ //C001
+                          //if(l_position==0&&par.getI_records().size()==0){
                               if(fc==null||!fc.isOpen()){
                                  fc = FileChannel.open(file, CREATE, WRITE,APPEND);
                              }
                               
                               fc.write(ByteBuffer.wrap(l_record.getBytes(Charset.forName("UTF-8"))));
                               dbg("before archival write call in update position 0");
-                               archivalWrite(p_fileName,'C',l_record,l_position,writeSessionID);
+                               archivalWrite(p_fileName,'C',l_record,0,writeSessionID);
                                dbg("after archival write call in update position 0");
                               
-                          }else{
+                          }else if(par.getI_records().size() >0 && l_position !=-1 ){//C001
                               
                               if(fc==null||!fc.isOpen()){
                                  dbg("opening file channel in update or delete operation for the file name"+p_fileName);
