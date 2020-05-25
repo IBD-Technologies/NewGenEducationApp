@@ -1,0 +1,17 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 May, 2020, 1:41:18 AM
+    Author     : IBD Technologies
+*/
+.cohesive-embed-responsive {
+    position: inherit;
+    display: block;
+    width: 100%;
+    height: -webkit-fill-available;
+    padding: 0;
+    overflow: hidden;
+}
