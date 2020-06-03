@@ -5,12 +5,10 @@
  */
 $(document).ready(function () {
 
-$('.indexLink').click(function(){
-    window.parent.$("#frame").attr('src', '');
-    var $scope = angular.element(window.parent.document.getElementById('MainCtrl')).scope();
-        $scope.dashBoardShow=true;
-        $scope.$apply();
-});
+    $('.indexLink').click(function () {
+        window.parent.launchMainScreen();
+        //window.parent.$("#frame").attr('src', '');
 
-
+    });
+ 
 });

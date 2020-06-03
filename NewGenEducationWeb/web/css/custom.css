@@ -278,12 +278,12 @@ section.content {
 
 .btn:not(.btn-link):not(.btn-circle) i {
     font-size: 20px;
-    color: #0f3341;
+    /*color: #0f3341;*/
     position: relative;
     top: 0px;
 }
 .submitForm{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .searchResult{
         /*text-align: center;*/
@@ -517,27 +517,14 @@ color: #0f3341;
 .card .subScreenBody{
   padding: 5px;
 }
-.col-md-6 .form-group .form-line {
-     width: 95%;
-    position: relative;
-    border-bottom: 1px solid #ddd;
-}
-/*.col-md-6 .form-group .form-line input{
+/*
+.col-md-6 .form-group .form-line input{
     width: 95%;
     position: relative;
     border-bottom: 1px solid #ddd;
 }
-.col-md-6 .form-group .form-line .btn-group{
-    width: 95%;
-    position: relative;
-     border-bottom: 1px solid #ddd;
-    }
- .col-md-6 .form-group .form-line select{
-    width: 95%;
-    position: relative;
-    border-bottom: 1px solid #ddd;
-   }   
- */
+*/
+
 .bs-stepper-pane .header .panel-group .panel .panel-heading .panel-title
 {
     margin-top: 0;
@@ -549,16 +536,22 @@ color: #0f3341;
 {
    color: #fff;
 } 
+.footerHeight
+{
+ background-color: #009688 !important;
+ color:#fff;    
+ min-height:6vh    
+}
 
-.card .header .col-md-6 b
+/*.card .header .col-sm-6 b
 {
     color: #555;
     padding: 0;
     position: relative;
 }
-.card .header .col-md-6 label
+.card .header .col-sm-6 label
 {
     color: #555;
     padding: 0;
     position: relative;
-}
+}*/

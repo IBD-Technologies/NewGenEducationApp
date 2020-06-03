@@ -39,7 +39,7 @@
 <body id="MainCtrl" class="theme-red" ng-app="Main" ng-controller="MainCtrl">
      <% 
           response.setHeader("X-Frame-Options","SAMEORIGIN");  
-          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
+          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self' ;style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
         %>
     
     <nav class="navbar ">

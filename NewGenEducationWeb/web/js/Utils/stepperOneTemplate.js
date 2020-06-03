@@ -5,7 +5,7 @@ var stepperOneTemplate='<div id="test-l-1" role="tabpanel" class="bs-stepper-pan
                           '</div>\n'+                  
                 '<div class="">\n'+
                 '<br>\n'+
-                    '<div id="create" onclick="stepOneSetAction(this.id)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
+                    '<div id="create"  class="subScreenoperations col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
                         '<div class="card waves-effect waves-block iconCards">\n'+
                             '<div class="header bg-white" >\n'+
                                 '<h2>\n'+
@@ -17,11 +17,11 @@ var stepperOneTemplate='<div id="test-l-1" role="tabpanel" class="bs-stepper-pan
                            '</div>\n'+
                        '</div>\n'+
                    '</div>\n'+
-                   '<div id="query" onclick="stepOneSetAction(this.id)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
+                   '<div id="query"  class="subScreenoperations col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
                     '<div class="card  waves-effect waves-block iconCards">\n'+
                         '<div class="header bg-white" >\n'+
                             '<h2>\n'+
-                                '<img class="operationIcon" src="images/query.png"><font  class="operationHeading">Query</font>\n'+
+                                '<img class="operationIcon" src="images/query.png"><font  class="operationHeading">View</font>\n'+
                             '</h2>\n'+
                             '<ul class="header-dropdown m-r--5">\n'+
                                '<i class="material-icons setAction hidden">check</i>\n'+
@@ -29,7 +29,7 @@ var stepperOneTemplate='<div id="test-l-1" role="tabpanel" class="bs-stepper-pan
                        '</div>\n'+
                    '</div>\n'+
                '</div>\n'+
-               '<div id="modification" onclick="stepOneSetAction(this.id)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
+               '<div id="modification"  class="subScreenoperations col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
                 '<div  class="card  waves-effect waves-block iconCards">\n'+
                     '<div class="header bg-white">\n'+
                         '<h2>\n'+
@@ -41,7 +41,7 @@ var stepperOneTemplate='<div id="test-l-1" role="tabpanel" class="bs-stepper-pan
                    '</div>\n'+
                '</div>\n'+
            '</div>\n'+
-           '<div id="deletion" onclick="stepOneSetAction(this.id)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
+           '<div id="deletion"  class="subScreenoperations col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
             '<div class="card  waves-effect waves-block iconCards">\n'+
                 '<div class="header bg-white" >\n'+
                     '<h2>\n'+
@@ -53,7 +53,7 @@ var stepperOneTemplate='<div id="test-l-1" role="tabpanel" class="bs-stepper-pan
                '</div>\n'+
            '</div>\n'+
        '</div>\n'+
-       '<div id="authorization" onclick="stepOneSetAction(this.id)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
+       '<div id="authorization"  class="subScreenoperations col-lg-12 col-md-12 col-sm-12 col-xs-12">\n'+
         '<div class="card  waves-effect waves-block iconCards">\n'+
             '<div class="header bg-white" >\n'+
                 '<h2>\n'+

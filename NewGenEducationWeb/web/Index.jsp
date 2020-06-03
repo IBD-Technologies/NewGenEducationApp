@@ -45,10 +45,10 @@
 
     </head>
 
-    <body id="MainCtrl" class="theme-red" ng-app="Main" ng-controller="MainCtrl" ng-Init="dashBoardShow=true">
+    <body id="MainCtrl" class="theme-teal subScreen" ng-app="Main" ng-controller="MainCtrl" ng-Init="dashBoardShow=true">
         <%
           response.setHeader("X-Frame-Options","SAMEORIGIN");  
-          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
+          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
         %>
         <div class="page-loader-wrapper">
             <div class="loader">
@@ -95,9 +95,9 @@
 
         <section>
             <!-- Left Sidebar -->
-            <aside id="leftsidebar" class="sidebar">
+            <aside id="leftsidebar" class="sidebar subScreenwrapper">
                 <!-- User Info -->
-                <div class="user-info">
+                <div class="user-info subScreenHeader">
                     <div class="image">
                         <img src="images/user.png" width="48" height="48" alt="User" />
                     </div>
@@ -120,9 +120,9 @@
                 </div>
                 <!-- #User Info -->
                 <!-- Menu -->
-                <div class="menu">
+                <div class="menu subScreenBody">
                     <ul class="list">
-                        <li  class="menuHeader header bg-teal">MENU</li>
+                       <!-- <li  class="menuHeader header bg-teal">MENU</li>-->
 
                         <li class="active">
                             <a  class='indexLink' href="#">
@@ -435,10 +435,10 @@
                     </ul>
                 </div>
                 <!-- #Menu -->
-                <div class="legal bg-teal">
+                <div class="legal subScreenFooter">
                     <center>
                         <p class="footerText">Copyrights <i class="material-icons f-icon">copyright</i> NewGen Education App2.0,2020,</p>
-                        <p class="footerText"><strong>IBD Technologies pvt Ltd</strong> All rights reserved</p>
+                        <p class="footerText"><strong class="companyBg">IBD Technologies pvt Ltd</strong> All rights reserved</p>
 
                     </center>
                 </div>
@@ -610,8 +610,8 @@
             <div id='dashBoard' ng-show="dashBoardShow">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
+                        <div class="card subScreenwrapper ">
+                            <div class="header subScreenHeader">
                                 <h2>DASHBOARD</h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
@@ -621,7 +621,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="body">
+                            <div class="body subScreenBody">
                                 <div class="bottomMargin row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="card">
@@ -769,8 +769,8 @@
                     </div>
                 </div>
             </div>
-            <div id='subScreen' class="embed-responsive cohesive-embed-responsive embed-responsive-1by1">
-                <iframe id="frame" class="embed-responsive-item " src="">
+            <div id='subScreen' ng-show="!dashBoardShow" class="embed-responsive cohesive-embed-responsive embed-responsive-1by1">
+                <iframe id="frame" class="embed-responsive-item " src="" ng-show="!dashBoardShow">
 
 
                 </iframe>
@@ -778,9 +778,9 @@
         </section>
         <div id="snackbar"></div>
         <div id="spinner"></div>
-        <button id="scrollTop" class="scrollTop" title="Go to top">
+      <!--  <button id="scrollTop" class="scrollTop" title="Go to top">
             <i class="material-icons">keyboard_arrow_up</i>
-        </button>
+        </button> -->
         <!--Angular Core JS --------->
         <script src="js/js_library/angular.min.js"></script>
         <script src="js/js_library/angular-route.js"></script>  
@@ -811,7 +811,7 @@
 
 
         <!-- Custom Js -->
-        <script src="js/Utils/scrollToTop.min.js"></script>
+       <!-- <script src="js/Utils/scrollToTop.min.js"></script> -->
        <!-- <script src="js/slimScrollCustom.js"></script>-->
         <script src="js/admin.min.js"></script>
 

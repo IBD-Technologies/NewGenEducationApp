@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 May, 2020, 3:40:19 AM
+    Author     : IBD Technologies
+*/
+
+.form-group .form-line select {
+    border-bottom: none;
+}
+.col-sm-6
+{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; 
+}
+.form-group .form-line img {
+    border-bottom: none;
+}
+.bs-stepper-pane .header
+{
+    color: #555;
+    padding: 0;
+    position: relative;
+    border-bottom: none;
+}
+.my-text {
+  display: block;
+  }
+.my-fancy-container {
+  /*border: 1px solid #ccc;
+  border-radius: 6px;*/
+  display: inline-block;
+  /*margin: 60px;*/
+ /* padding: 10px;*/
+  text-align: center;
+}
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    margin: 0 auto;
+}
+.button-aign{
+  float:right  
+}
+.topnav {
+  background-color: #009688 !important;
+  color:#fff;    
+  overflow: hidden;
+}
+.topnav a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 30px 0px 30px;
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+}
+/*.topnav .left a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 25px 0px 25px;
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+  position:absolute
+}
+*/
+.topnav a:hover {
+  border-bottom: 3px solid #1f91f3;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid white;
+}
+.btn-toolbar-custom{
+    width:100%;
+    text-align:center;
+    background-color:#009688 !important 
+   }
+   .btn-txt-color{
+    color:white;
+    font-weight: bold;
+   }   
+  button.btn.btn-default.font-bold.waves-effect.btn-pagination-color {
+    color: #4caf50;
+}
+
+

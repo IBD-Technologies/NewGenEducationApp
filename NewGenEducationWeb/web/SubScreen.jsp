@@ -1,5 +1,5 @@
 <%-- 
-    Document   : StudentProfile
+    Document   : SubScreen
     Created on : 14 May, 2020, 3:29:31 AM
     Author     : IBD Technologies
 --%>
@@ -55,10 +55,10 @@
 
     </head>
 
-    <body id="SubScreenCtrl" class="theme-red subScreen" ng-app="SubScreen" ng-controller="SubScreenCtrl" ng-Init="searchShow=true">
+    <body id="SubScreenCtrl" class="theme-teal subScreen" ng-app="SubScreen" ng-controller="SubScreenCtrl" ng-Init="searchShow=true">
       <%
           response.setHeader("X-Frame-Options","SAMEORIGIN");  
-          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self' ;style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
+          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
         %>
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
@@ -87,8 +87,8 @@
                         <div class="card subScreenwrapper">
                             <div id="screenHeader" class="header subScreenHeader">
                                 <ol class="breadcrumb">
-                                    <li><a href="#"><i class="material-icons">school</i>  Student</a></li>
-                                    <li><a href="#"><i class="material-icons">person</i> Profile</a></li>
+                                    <li><a href="#"><i class="material-icons">{{parentMenuIcon}}</i>{{parentMenuName}}</a></li>
+                                    <li><a href="#"><i class="material-icons">{{activeSubMenuIcon}}</i>{{activeSubMenu}}</a></li>
                                     <li>{{currentOperation}}</li>  
                                 </ol>
 
@@ -231,15 +231,12 @@
         <script src="js/Utils/audit.min.js"></script>
         <script src="js/Utils/stepperOneTemplate.min.js"></script>
         <script src="js/Utils/defaultConfig.min.js"></script>
+        <script type="text/javascript" src="js/Utils/InstructionHeader.min.js"></script>
         <script src="js/Utils/stepper.min.js"></script>
         <script src="js/Utils/stepperAction.min.js"></script>
         <script type="text/javascript" src="js/Utils/ScreenUtils.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfileCreateConfig.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfileQueryConfig.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfileModificationConfig.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfileDeletionConfig.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfileAuthConfig.min.js"></script>
-        <script src="js/config/Student/Profile/studentProfile.min.js"></script>
+        <script src="js/Utils/LastStepTemplate.min.js"></script>
+        <script src="js/config/SubScreen/SubScreen.min.js"></script>
 
   
         

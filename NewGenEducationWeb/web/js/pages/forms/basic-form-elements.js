@@ -11,7 +11,8 @@ $(document).ready(function() {
     });
 
     $('.datepicker').bootstrapMaterialDatePicker({
-        format: 'dddd DD MMMM YYYY',
+       // format: 'dddd DD MMMM YYYY',
+       format: 'dd-mm-yy',
         clearButton: true,
         weekStart: 1,
         time: false

@@ -25,17 +25,10 @@
     <link href="css/login.css" rel="stylesheet" />
    </head>
    <body id="MainCtrl" class="theme-red" ng-app="Main" ng-controller="MainCtrl">
-      <%
-          response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-        response.setHeader("Pragma","no-cache"); //Http 1.0
-        response.setHeader("Expires", "-1"); //Proxies
-       response.setHeader("X-XSS-Protection","1;mode=block");
-       response.setHeader("X-Frame-Options","SAMEORIGIN");
-      response.setHeader("Content-Security-Policy","default-src 'self';font-src 'self' data: fonts.gstatic.com;"
-              + ""
-              + "script-src 'self';style-src 'unsafe-inline' 'self' https://fonts.googleapis.com;base-uri 'none';form-action 'self';frame-ancestors 'self'");
-      //response.setHeader("Content-Security-Policy","default-src blob:https://cohesive.ibdtechnologies.com ;script-src 'self'; style-src 'unsafe-inline' 'self';base-uri 'none';form-action 'self';frame-ancestors 'none';frame-src blob:https://cohesive.ibdtechnologies.com");
-      %>
+       <% 
+          response.setHeader("X-Frame-Options","SAMEORIGIN");  
+          response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
+        %>
       
       <!-- Page Loader -->
     <div class="page-loader-wrapper">

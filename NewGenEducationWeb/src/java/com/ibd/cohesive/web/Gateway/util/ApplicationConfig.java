@@ -37,12 +37,15 @@ public class ApplicationConfig extends Application {
         resources.add(com.ibd.cohesive.web.Gateway.ClassSummary.ClassSummaryEntityResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.ImageUpload.FileUploadResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.ImageUpload.FileUploadsResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.ImageUpload.ImageUploadResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.ImageUpload.ImageUploadsResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Institute.InstituteResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Institute.InstitutesResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.InstituteSummary.InstituteSummaryEntitiesResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.InstituteSummary.InstituteSummaryEntityResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.Report.ClassReport.ClassReportResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Report.ClassReport.ClassReportsResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.Report.InstituteReport.InstituteReportResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Report.InstituteReport.InstituteReportsResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Report.StudentReport.StudentReportResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Report.StudentReport.StudentReportsResource.class);
@@ -53,11 +56,15 @@ public class ApplicationConfig extends Application {
         resources.add(com.ibd.cohesive.web.Gateway.Student.StudentResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Student.StudentsResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.StudentSummary.StudentSummaryEntitiesResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.StudentSummary.StudentSummaryEntityResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Teacher.TeacherResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.Teacher.TeachersResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.TeacherSummary.TeacherSummaryEntitiesResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.TeacherSummary.TeacherSummaryEntityResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.User.UserResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.User.UsersResource.class);
         resources.add(com.ibd.cohesive.web.Gateway.UserSummary.UserSummaryEntitiesResource.class);
+        resources.add(com.ibd.cohesive.web.Gateway.UserSummary.UserSummaryEntityResource.class);
     }
     
 }
