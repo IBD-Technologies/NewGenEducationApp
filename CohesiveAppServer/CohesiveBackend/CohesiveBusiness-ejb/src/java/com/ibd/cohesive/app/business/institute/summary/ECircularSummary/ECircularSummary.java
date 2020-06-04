@@ -261,7 +261,7 @@ public class ECircularSummary implements IECircularSummary{
        eCircular.filter.setFromDate(l_filterObject.getString("fromDate"));
        eCircular.filter.setToDate(l_filterObject.getString("toDate"));
        
-       if(l_filterObject.getString("authStat").equals("Select option")){
+       if(l_filterObject.getString("authStat").equals("")){
           
           eCircular.filter.setAuthStatus("");
       }else{

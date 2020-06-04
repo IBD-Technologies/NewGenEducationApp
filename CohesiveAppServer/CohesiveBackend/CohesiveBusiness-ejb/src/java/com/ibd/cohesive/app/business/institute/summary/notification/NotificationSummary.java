@@ -267,7 +267,7 @@ public class NotificationSummary implements INotificationSummary{
 //      notification.filter.setAssignee(l_filterObject.getString("assignee"));
       
       notification.filter.setCreationDate(l_filterObject.getString("instant"));
-      if(l_filterObject.getString("notificationType").equals("Select option")){
+      if(l_filterObject.getString("notificationType").equals("")){
           
           notification.filter.setNotificationType("");
       }else{
@@ -275,7 +275,7 @@ public class NotificationSummary implements INotificationSummary{
           notification.filter.setNotificationType(l_filterObject.getString("notificationType"));
       }
       
-      if(l_filterObject.getString("mediaCommunication").equals("Select option")){
+      if(l_filterObject.getString("mediaCommunication").equals("")){
           
           notification.filter.setMediaCommunication("");
       }else{
@@ -283,7 +283,7 @@ public class NotificationSummary implements INotificationSummary{
           notification.filter.setMediaCommunication(l_filterObject.getString("mediaCommunication"));
       
       }
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           notification.filter.setAuthStatus("");
       }else{
@@ -291,7 +291,7 @@ public class NotificationSummary implements INotificationSummary{
           notification.filter.setAuthStatus(l_filterObject.getString("authStat"));
       }
       
-//      if(l_filterObject.getString("recordStat").equals("Select option")){
+//      if(l_filterObject.getString("recordStat").equals("")){
 //          
 //          notification.filter.setRecordStatus("");
 //      }else{

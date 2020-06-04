@@ -249,7 +249,7 @@ public class ClassSoftSkillSummary implements IClassSoftSkillSummary{
       classSoftSkill.filter=new ClassSoftSkillFilter();
 //      classSoftSkill.filter.setStandard(l_filterObject.getString("standard"));
 //      classSoftSkill.filter.setSection(l_filterObject.getString("section"));
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           classSoftSkill.filter.setStandard("");
           classSoftSkill.filter.setSection("");
       }else{
@@ -260,7 +260,7 @@ public class ClassSoftSkillSummary implements IClassSoftSkillSummary{
           classSoftSkill.filter.setSection(l_class.split("/")[1]);
       
       }
-      if(l_filterObject.getString("skillID").equals("Select option")){
+      if(l_filterObject.getString("skillID").equals("")){
           
           classSoftSkill.filter.setSkillID("");
       }else{
@@ -269,7 +269,7 @@ public class ClassSoftSkillSummary implements IClassSoftSkillSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           classSoftSkill.filter.setAuthStatus("");
       }else{
@@ -278,7 +278,7 @@ public class ClassSoftSkillSummary implements IClassSoftSkillSummary{
       
       }
       
-      if(l_filterObject.getString("exam").equals("Select option")){
+      if(l_filterObject.getString("exam").equals("")){
           
           classSoftSkill.filter.setExam("");
       }else{

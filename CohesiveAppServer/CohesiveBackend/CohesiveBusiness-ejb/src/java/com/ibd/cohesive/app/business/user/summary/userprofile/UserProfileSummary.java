@@ -251,7 +251,7 @@ public class UserProfileSummary implements IUserProfileSummary{
       userProfile.filter.setUserName(l_filterObject.getString("userName"));
 //      userProfile.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      userProfile.filter.setAuthStatus(l_filterObject.getString("authStat"));
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           userProfile.filter.setAuthStatus("");
       }else{

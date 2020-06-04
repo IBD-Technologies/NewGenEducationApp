@@ -257,7 +257,7 @@ public class StudentSoftSkillSummary implements IStudentSoftSkillSummary{
 
    
 
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           studentSoftSkill.filter.setStandard("");
           studentSoftSkill.filter.setSection("");
       }else{
@@ -271,7 +271,7 @@ public class StudentSoftSkillSummary implements IStudentSoftSkillSummary{
       
 
 
-      if(l_filterObject.getString("signStatus").equals("Select option")){
+      if(l_filterObject.getString("signStatus").equals("")){
           
           studentSoftSkill.filter.setSignStatus("");
       }else{
@@ -280,7 +280,7 @@ public class StudentSoftSkillSummary implements IStudentSoftSkillSummary{
       }
 
       
-      if(l_filterObject.getString("exam").equals("Select option")){
+      if(l_filterObject.getString("exam").equals("")){
           
           studentSoftSkill.filter.setExam("");
       }else{

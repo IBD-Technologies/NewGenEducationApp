@@ -263,7 +263,7 @@ public class TeacherAttendanceSummary implements ITeacherAttendanceSummary{
 //      teacherAttendance.filter.setAuthStatus(l_filterObject.getString("authStat"));
       teacherAttendance.filter.setDate(l_filterObject.getString("date"));
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           teacherAttendance.filter.setAuthStatus("");
       }else{

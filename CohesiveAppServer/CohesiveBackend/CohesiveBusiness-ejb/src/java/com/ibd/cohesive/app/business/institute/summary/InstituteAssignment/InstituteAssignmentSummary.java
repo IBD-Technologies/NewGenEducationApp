@@ -254,14 +254,14 @@ public class InstituteAssignmentSummary implements IInstituteAssignmentSummary{
 //      instituteAssignment.filter.setAuthStatus(l_filterObject.getString("authStat"));
 
        
-      if(l_filterObject.getString("assignmentType").equals("Select option")){
+      if(l_filterObject.getString("assignmentType").equals("")){
 
           instituteAssignment.filter.setAssignmentType("");
       }else{
 
           instituteAssignment.filter.setAssignmentType(l_filterObject.getString("assignmentType"));
       }
-      if(l_filterObject.getString("subjectID").equals("Select option")){
+      if(l_filterObject.getString("subjectID").equals("")){
           
           instituteAssignment.filter.setSubjectID("");
       }else{
@@ -270,7 +270,7 @@ public class InstituteAssignmentSummary implements IInstituteAssignmentSummary{
       }
        instituteAssignment.filter.setDueDate(l_filterObject.getString("dueDate"));
        
-       if(l_filterObject.getString("authStat").equals("Select option")){
+       if(l_filterObject.getString("authStat").equals("")){
           
           instituteAssignment.filter.setAuthStatus("");
       }else{

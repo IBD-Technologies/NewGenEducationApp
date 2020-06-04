@@ -256,7 +256,7 @@ public class HolidayMaintenanceSummary implements IHolidayMaintenanceSummary{
 //      holidayMaintenance.filter.setYear(l_filterObject.getString("year"));
 //      holidayMaintenance.filter.setMonth(l_filterObject.getString("month"));
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           holidayMaintenance.filter.setAuthStatus("");
       }else{
@@ -264,7 +264,7 @@ public class HolidayMaintenanceSummary implements IHolidayMaintenanceSummary{
           holidayMaintenance.filter.setAuthStatus(l_filterObject.getString("authStat"));
       }
       
-      if(l_filterObject.getString("year").equals("Select option")){
+      if(l_filterObject.getString("year").equals("")){
           
           holidayMaintenance.filter.setYear("");
       }else{
@@ -272,7 +272,7 @@ public class HolidayMaintenanceSummary implements IHolidayMaintenanceSummary{
           holidayMaintenance.filter.setYear(l_filterObject.getString("year"));
       }
       
-      if(l_filterObject.getString("month").equals("Select option")){
+      if(l_filterObject.getString("month").equals("")){
           
           holidayMaintenance.filter.setMonth("");
       }else{

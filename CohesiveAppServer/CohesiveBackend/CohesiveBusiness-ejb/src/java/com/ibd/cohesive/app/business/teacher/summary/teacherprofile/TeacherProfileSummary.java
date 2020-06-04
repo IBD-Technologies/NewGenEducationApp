@@ -250,7 +250,7 @@ public class TeacherProfileSummary implements ITeacherProfileSummary{
 //      teacherProfile.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      teacherProfile.filter.setAuthStatus(l_filterObject.getString("authStat"));
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           teacherProfile.filter.setAuthStatus("");
       }else{

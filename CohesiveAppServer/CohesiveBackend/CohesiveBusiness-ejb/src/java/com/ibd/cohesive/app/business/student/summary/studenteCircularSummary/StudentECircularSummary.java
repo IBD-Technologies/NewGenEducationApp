@@ -257,7 +257,7 @@ public class StudentECircularSummary implements IStudentECircularSummary{
 
    
 
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           studentECircular.filter.setStandard("");
           studentECircular.filter.setSection("");
       }else{
@@ -271,7 +271,7 @@ public class StudentECircularSummary implements IStudentECircularSummary{
       
 
 
-      if(l_filterObject.getString("signStatus").equals("Select option")){
+      if(l_filterObject.getString("signStatus").equals("")){
           
           studentECircular.filter.setSignStatus("");
       }else{

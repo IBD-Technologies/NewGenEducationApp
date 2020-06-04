@@ -267,7 +267,7 @@ public class StudentAssignmentSummary implements IStudentAssignmentSummary{
       studentAssignment.filter.setFromDate(l_filterObject.getString("fromDate"));
       studentAssignment.filter.setToDate(l_filterObject.getString("toDate"));
       
-//      if(l_filterObject.getString("subjectID").equals("Select option")){
+//      if(l_filterObject.getString("subjectID").equals("")){
 //          
 //          studentAssignment.filter.setSubjectID("");
 //      }else{
@@ -275,7 +275,7 @@ public class StudentAssignmentSummary implements IStudentAssignmentSummary{
 //          studentAssignment.filter.setSubjectID(l_filterObject.getString("subjectID"));
 //      }
 //      
-//      if(l_filterObject.getString("assignmentType").equals("Select option")){
+//      if(l_filterObject.getString("assignmentType").equals("")){
 //          
 //          studentAssignment.filter.setAssignmentType("");
 //      }else{
@@ -284,7 +284,7 @@ public class StudentAssignmentSummary implements IStudentAssignmentSummary{
 //      
 //      }
 //      
-//       if(l_filterObject.getString("authStat").equals("Select option")){
+//       if(l_filterObject.getString("authStat").equals("")){
 //          
 //          studentAssignment.filter.setAuthStatus("");
 //      }else{
@@ -292,7 +292,7 @@ public class StudentAssignmentSummary implements IStudentAssignmentSummary{
 //          studentAssignment.filter.setAuthStatus(l_filterObject.getString("authStat"));
 //      }
 //      
-//      if(l_filterObject.getString("status").equals("Select option")){
+//      if(l_filterObject.getString("status").equals("")){
 //          
 //          studentAssignment.filter.setStatus("");
 //      }else{

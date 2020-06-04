@@ -260,7 +260,7 @@ public class InstituteOtherActivitySummary implements IInstituteOtherActivitySum
 //      instituteOtherActivity.filter.setAuthStatus(l_filterObject.getString("authStat"));
       
        
-       if(l_filterObject.getString("activityType").equals("Select option")){
+       if(l_filterObject.getString("activityType").equals("")){
 
           instituteOtherActivity.filter.setActivityType("");
       }else{
@@ -268,7 +268,7 @@ public class InstituteOtherActivitySummary implements IInstituteOtherActivitySum
           instituteOtherActivity.filter.setActivityType(l_filterObject.getString("activityType"));
       }
 
-      if(l_filterObject.getString("level").equals("Select option")){
+      if(l_filterObject.getString("level").equals("")){
 
           instituteOtherActivity.filter.setLevel("");
       }else{
@@ -276,7 +276,7 @@ public class InstituteOtherActivitySummary implements IInstituteOtherActivitySum
           instituteOtherActivity.filter.setLevel(l_filterObject.getString("level"));
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           instituteOtherActivity.filter.setAuthStatus("");
       }else{

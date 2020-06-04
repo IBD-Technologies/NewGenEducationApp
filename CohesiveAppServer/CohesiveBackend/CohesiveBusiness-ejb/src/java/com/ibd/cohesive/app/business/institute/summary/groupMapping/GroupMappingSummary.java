@@ -250,7 +250,7 @@ public class GroupMappingSummary implements IGroupMappingSummary{
 //      groupMapping.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      groupMapping.filter.setAuthStatus(l_filterObject.getString("authStat"));
 
-        if(l_filterObject.getString("authStat").equals("Select option")){
+        if(l_filterObject.getString("authStat").equals("")){
           
           groupMapping.filter.setAuthStatus("");
         }else{

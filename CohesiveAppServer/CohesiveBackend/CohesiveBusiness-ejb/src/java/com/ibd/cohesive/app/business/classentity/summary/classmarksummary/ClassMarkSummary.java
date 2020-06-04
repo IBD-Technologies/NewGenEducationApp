@@ -251,7 +251,7 @@ public class ClassMarkSummary implements IClassMarkSummary{
       classMark.filter=new ClassMarkFilter();
 //      classMark.filter.setStandard(l_filterObject.getString("standard"));
 //      classMark.filter.setSection(l_filterObject.getString("section"));
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           classMark.filter.setStandard("");
           classMark.filter.setSection("");
       }else{
@@ -262,7 +262,7 @@ public class ClassMarkSummary implements IClassMarkSummary{
           classMark.filter.setSection(l_class.split("/")[1]);
       
       }
-      if(l_filterObject.getString("subjectID").equals("Select option")){
+      if(l_filterObject.getString("subjectID").equals("")){
           
           classMark.filter.setSubjectID("");
       }else{
@@ -271,7 +271,7 @@ public class ClassMarkSummary implements IClassMarkSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           classMark.filter.setAuthStatus("");
       }else{
@@ -280,7 +280,7 @@ public class ClassMarkSummary implements IClassMarkSummary{
       
       }
       
-      if(l_filterObject.getString("exam").equals("Select option")){
+      if(l_filterObject.getString("exam").equals("")){
           
           classMark.filter.setExam("");
       }else{

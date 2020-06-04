@@ -255,7 +255,7 @@ public class ClassSummary implements IClassSummary{
       
 //      Class.filter.setYear(l_filterObject.getString("year"));
 //      Class.filter.setMonth(l_filterObject.getString("month"));
-      if(l_filterObject.getString("Class").equals("Select option")){
+      if(l_filterObject.getString("Class").equals("")){
           Class.filter.setStandard("");
           Class.filter.setSection("");
       }else{
@@ -266,7 +266,7 @@ public class ClassSummary implements IClassSummary{
           Class.filter.setSection(l_class.split("/")[1]);
       
       }
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           Class.filter.setAuthStatus("");
       }else{

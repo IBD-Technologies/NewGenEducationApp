@@ -269,7 +269,7 @@ public class StudentLeaveManagementSummary implements IStudentLeaveManagementSum
       studentLeaveManagement.filter.setFrom(l_filterObject.getString("from"));
       studentLeaveManagement.filter.setTo(l_filterObject.getString("to"));
       
-      if(l_filterObject.getString("leaveStatus").equals("Select option")){
+      if(l_filterObject.getString("leaveStatus").equals("")){
           
           studentLeaveManagement.filter.setLeaveStatus("");
       }else{
@@ -277,7 +277,7 @@ public class StudentLeaveManagementSummary implements IStudentLeaveManagementSum
           studentLeaveManagement.filter.setLeaveStatus(l_filterObject.getString("leaveStatus"));
       }
 
-       if(l_filterObject.getString("class").equals("Select option")||l_filterObject.getString("class").equals("")){
+       if(l_filterObject.getString("class").equals("")||l_filterObject.getString("class").equals("")){
           studentLeaveManagement.filter.setStandard("");
           studentLeaveManagement.filter.setSection("");
       }else{

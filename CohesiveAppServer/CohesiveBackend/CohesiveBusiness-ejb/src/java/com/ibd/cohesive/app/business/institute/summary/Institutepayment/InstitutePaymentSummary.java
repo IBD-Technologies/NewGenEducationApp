@@ -257,7 +257,7 @@ public class InstitutePaymentSummary implements IInstitutePaymentSummary{
       
       institutePayment.filter.setPaymentDate(l_filterObject.getString("paymentDate"));
       
-//      if(l_filterObject.getString("feeType").equals("Select option")){
+//      if(l_filterObject.getString("feeType").equals("")){
 //
 //           institutePayment.filter.setFeeType("");
 //        }else{
@@ -265,7 +265,7 @@ public class InstitutePaymentSummary implements IInstitutePaymentSummary{
 //           institutePayment.filter.setFeeType(l_filterObject.getString("feeType"));
 //        }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           institutePayment.filter.setAuthStatus("");
         }else{
@@ -273,7 +273,7 @@ public class InstitutePaymentSummary implements IInstitutePaymentSummary{
           institutePayment.filter.setAuthStatus(l_filterObject.getString("authStat"));
         }
       
-      if(l_filterObject.getString("paymentPaid").equals("Select option")){
+      if(l_filterObject.getString("paymentPaid").equals("")){
           
           institutePayment.filter.setPaymentAmount("");
         }else{

@@ -250,7 +250,7 @@ public class StudentTimeTableSummary implements IStudentTimeTableSummary{
       studentTimeTable.filter.setStudentName(l_filterObject.getString("studentName"));
 //      studentTimeTable.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      studentTimeTable.filter.setAuthStatus(l_filterObject.getString("authStat"));
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           studentTimeTable.filter.setStandard("");
           studentTimeTable.filter.setSection("");
       }else{
@@ -262,7 +262,7 @@ public class StudentTimeTableSummary implements IStudentTimeTableSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           studentTimeTable.filter.setAuthStatus("");
       }else{

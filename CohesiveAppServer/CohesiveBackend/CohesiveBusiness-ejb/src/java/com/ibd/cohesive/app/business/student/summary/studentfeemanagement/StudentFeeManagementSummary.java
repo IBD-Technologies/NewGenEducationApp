@@ -262,7 +262,7 @@ public class StudentFeeManagementSummary implements IStudentFeeManagementSummary
 //      studentFeeManagement.filter.setDueDate(l_filterObject.getString("dueDate"));
 //      studentFeeManagement.filter.setPaidDate(l_filterObject.getString("paidDate"));
 //      studentFeeManagement.filter.setStatus(l_filterObject.getString("status"));
-//       if(l_filterObject.getString("class").equals("Select option")){
+//       if(l_filterObject.getString("class").equals("")){
 //          studentFeeManagement.filter.setStandard("");
 //          studentFeeManagement.filter.setSection("");
 //      }else{
@@ -278,7 +278,7 @@ public class StudentFeeManagementSummary implements IStudentFeeManagementSummary
       studentFeeManagement.filter.setStudentID(l_filterObject.getString("studentID"));
 //      studentFeeManagement.filter.setPaidDate(l_filterObject.getString("paidDate"));
       
-//      if(l_filterObject.getString("authStat").equals("Select option")){
+//      if(l_filterObject.getString("authStat").equals("")){
 //          
 //          studentFeeManagement.filter.setAuthStatus("");
 //      }else{
@@ -286,7 +286,7 @@ public class StudentFeeManagementSummary implements IStudentFeeManagementSummary
 //          studentFeeManagement.filter.setAuthStatus(l_filterObject.getString("authStat"));
 //      }
   
-      if(l_filterObject.getString("feeType").equals("Select option")){
+      if(l_filterObject.getString("feeType").equals("")){
           
           studentFeeManagement.filter.setFeeType("");
       }else{
@@ -294,7 +294,7 @@ public class StudentFeeManagementSummary implements IStudentFeeManagementSummary
           studentFeeManagement.filter.setFeeType(l_filterObject.getString("feeType"));
       }
       
-      if(l_filterObject.getString("status").equals("Select option")){
+      if(l_filterObject.getString("status").equals("")){
           
           studentFeeManagement.filter.setStatus("");
       }else{

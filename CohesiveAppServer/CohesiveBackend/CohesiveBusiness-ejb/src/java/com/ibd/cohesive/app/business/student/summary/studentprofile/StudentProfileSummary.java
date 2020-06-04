@@ -253,7 +253,7 @@ public class StudentProfileSummary implements IStudentProfileSummary{
 //      studentProfile.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      studentProfile.filter.setAuthStatus(l_filterObject.getString("authStat"));
 
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           studentProfile.filter.setStandard("");
           studentProfile.filter.setSection("");
       }else{
@@ -266,7 +266,7 @@ public class StudentProfileSummary implements IStudentProfileSummary{
       }
 
 
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           studentProfile.filter.setAuthStatus("");
       }else{

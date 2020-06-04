@@ -265,14 +265,14 @@ public class StudentOtherActivitySummary implements IStudentOtherActivitySummary
       studentOtherActivity.filter.setStudentName(l_filterObject.getString("studentName"));
       studentOtherActivity.filter.setFromDate(l_filterObject.getString("fromDate"));
       studentOtherActivity.filter.setToDate(l_filterObject.getString("toDate"));
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           studentOtherActivity.filter.setAuthStatus("");
       }else{
       
           studentOtherActivity.filter.setAuthStatus(l_filterObject.getString("authStat"));
       }
-      if(l_filterObject.getString("class").equals("Select option")||l_filterObject.getString("class").equals("")){
+      if(l_filterObject.getString("class").equals("")||l_filterObject.getString("class").equals("")){
           studentOtherActivity.filter.setStandard("");
           studentOtherActivity.filter.setSection("");
       }else{

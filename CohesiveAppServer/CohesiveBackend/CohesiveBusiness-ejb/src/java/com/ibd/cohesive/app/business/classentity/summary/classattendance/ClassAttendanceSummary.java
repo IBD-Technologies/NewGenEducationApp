@@ -259,7 +259,7 @@ public class ClassAttendanceSummary implements IClassAttendanceSummary{
       BSValidation bsv=inject.getBsv(session);
 //      classAttendance.filter.setStandard(l_filterObject.getString("standard"));
 //      classAttendance.filter.setSection(l_filterObject.getString("section"));
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           classAttendance.filter.setStandard("");
           classAttendance.filter.setSection("");
       }else{
@@ -271,7 +271,7 @@ public class ClassAttendanceSummary implements IClassAttendanceSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           classAttendance.filter.setAuthStatus("");
       }else{

@@ -306,7 +306,7 @@ public class NotificationService implements INotificationService{
             notification.setNotificationType(l_body.getString("notificationType"));
             notification.setNotificationFrequency("I");
             
-            if(l_body.getString("date").equals("Select option")){
+            if(l_body.getString("date").equals("")){
             
                notification.setDate("");
             
@@ -1062,20 +1062,20 @@ public class NotificationService implements INotificationService{
                errhandler.log_app_error("BS_VAL_002","notificationType");
             }
            
-            if(!notification.getNotificationFrequency().equals("Select option")&&!notification.getNotificationFrequency().equals("")&&!notification.getNotificationFrequency().equals("I")) {   
+            if(!notification.getNotificationFrequency().equals("")&&!notification.getNotificationFrequency().equals("")&&!notification.getNotificationFrequency().equals("I")) {   
                status=false;
                errhandler.log_app_error("BS_VAL_036","Frequency other than Instant");
        
             }
-            if(!notification.getDate().equals("Select option")&&!notification.getDate().equals("")) {   
+            if(!notification.getDate().equals("")&&!notification.getDate().equals("")) {   
                status=false;
                errhandler.log_app_error("BS_VAL_036","Date");
             }
-            if(!notification.getDay().equals("Select option")&&!notification.getDay().equals("")) {   
+            if(!notification.getDay().equals("")&&!notification.getDay().equals("")) {   
                status=false;
                errhandler.log_app_error("BS_VAL_036","Day");
             }
-            if(!notification.getMonth().equals("Select option")&&!notification.getMonth().equals("")) {   
+            if(!notification.getMonth().equals("")&&!notification.getMonth().equals("")) {   
                status=false;
       
               errhandler.log_app_error("BS_VAL_036","Month");

@@ -256,7 +256,7 @@ public class ClassTimeTableSummary implements IClassTimeTableSummary{
 //      classTimeTable.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      classTimeTable.filter.setAuthStatus(l_filterObject.getString("authStat"));
 
-       if(l_filterObject.getString("class").equals("Select option")){
+       if(l_filterObject.getString("class").equals("")){
           classTimeTable.filter.setStandard("");
           classTimeTable.filter.setSection("");
       }else{
@@ -268,7 +268,7 @@ public class ClassTimeTableSummary implements IClassTimeTableSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           classTimeTable.filter.setAuthStatus("");
       }else{
@@ -276,7 +276,7 @@ public class ClassTimeTableSummary implements IClassTimeTableSummary{
           classTimeTable.filter.setAuthStatus(l_filterObject.getString("authStat"));
       }
       
-//      if(l_filterObject.getString("recordStat").equals("Select option")){
+//      if(l_filterObject.getString("recordStat").equals("")){
 //          
 //          classTimeTable.filter.setRecordStatus("");
 //      }else{

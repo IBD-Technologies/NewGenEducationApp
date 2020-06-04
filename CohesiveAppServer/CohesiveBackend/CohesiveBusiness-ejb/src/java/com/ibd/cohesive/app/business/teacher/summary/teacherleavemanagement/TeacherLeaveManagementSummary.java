@@ -269,7 +269,7 @@ public class TeacherLeaveManagementSummary implements ITeacherLeaveManagementSum
       teacherLeaveManagement.filter.setFrom(l_filterObject.getString("from"));
       teacherLeaveManagement.filter.setTo(l_filterObject.getString("to"));
       
-      if(l_filterObject.getString("leaveStatus").equals("Select option")){
+      if(l_filterObject.getString("leaveStatus").equals("")){
           
           teacherLeaveManagement.filter.setLeaveStatus("");
       }else{

@@ -256,7 +256,7 @@ public class StudentProgressCardSummary implements IStudentProgressCardSummary{
 
    
 
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           studentProgressCard.filter.setStandard("");
           studentProgressCard.filter.setSection("");
       }else{
@@ -270,7 +270,7 @@ public class StudentProgressCardSummary implements IStudentProgressCardSummary{
       
 
 
-      if(l_filterObject.getString("signStatus").equals("Select option")){
+      if(l_filterObject.getString("signStatus").equals("")){
           
           studentProgressCard.filter.setSignStatus("");
       }else{
@@ -279,7 +279,7 @@ public class StudentProgressCardSummary implements IStudentProgressCardSummary{
       }
 
       
-      if(l_filterObject.getString("exam").equals("Select option")){
+      if(l_filterObject.getString("exam").equals("")){
           
           studentProgressCard.filter.setExam("");
       }else{

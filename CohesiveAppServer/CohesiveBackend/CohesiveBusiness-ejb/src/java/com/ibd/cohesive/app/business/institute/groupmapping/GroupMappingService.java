@@ -315,7 +315,7 @@ public class GroupMappingService implements  IGroupMappingService{
 //                groupMapping.group[i].setStandard(groupObject.getString("standard"));
 //                groupMapping.group[i].setSection(groupObject.getString("section"));
 
-                if(groupObject.getString("class").equals("Select option")){
+                if(groupObject.getString("class").equals("")){
                     
                   groupMapping.group[i].setStandard("dum");
                   groupMapping.group[i].setSection("dum");
@@ -930,7 +930,7 @@ public class GroupMappingService implements  IGroupMappingService{
                 String classs;
                 if(standard.isEmpty()&&section.isEmpty()){
                     
-                    classs="Select option";
+                    classs="";
                 }else{
                     classs=groupMapping.group[i].getStandard()+"/"+groupMapping.group[i].getSection();
                 }

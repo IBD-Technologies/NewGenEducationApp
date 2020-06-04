@@ -309,7 +309,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                             exceptionRised=true;
                            selectBoxMaster.classMaster=new ClassMaster[1];
                            selectBoxMaster.classMaster[0]=new ClassMaster();
-                           selectBoxMaster.classMaster[0].setClasss("Select option");
+                           selectBoxMaster.classMaster[0].setClasss("");
 //                           selectBoxMaster.classMaster[0]=new ClassMaster();
 //                           selectBoxMaster.classMaster[0].setClasss("ALL");
                        }else{
@@ -325,7 +325,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
 
                        selectBoxMaster.classMaster=new ClassMaster[l_classWiseList.size()+1];
                        selectBoxMaster.classMaster[0]=new ClassMaster();
-                       selectBoxMaster.classMaster[0].setClasss("Select option");
+                       selectBoxMaster.classMaster[0].setClasss("");
                        
 //                       boolean integerClassName=false;
 //                       
@@ -408,7 +408,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.standardMaster=new StandardMaster[1];
                            selectBoxMaster.standardMaster[0]=new StandardMaster();
-                           selectBoxMaster.standardMaster[0].setStandard("Select option");
+                           selectBoxMaster.standardMaster[0].setStandard("");
                         }else{
                            throw ex;
                        }
@@ -418,7 +418,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                    
                        selectBoxMaster.standardMaster=new StandardMaster[standardList.size()+1];
                        selectBoxMaster.standardMaster[0]=new StandardMaster();
-                       selectBoxMaster.standardMaster[0].setStandard("Select option");
+                       selectBoxMaster.standardMaster[0].setStandard("");
 
                        Iterator<String>standardIterator=standardList.iterator();
 
@@ -454,7 +454,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.sectionMaster=new SectionMaster[1];
                            selectBoxMaster.sectionMaster[0]=new SectionMaster();
-                           selectBoxMaster.sectionMaster[0].setSection("Select option");
+                           selectBoxMaster.sectionMaster[0].setSection("");
                          }else{
                            throw ex;
                        }
@@ -465,7 +465,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                    
                        selectBoxMaster.sectionMaster=new SectionMaster[sectionList.size()+1];
                        selectBoxMaster.sectionMaster[0]=new SectionMaster();
-                       selectBoxMaster.sectionMaster[0].setSection("Select option");
+                       selectBoxMaster.sectionMaster[0].setSection("");
 
                        Iterator<String>sectionIterator=sectionList.iterator();
 
@@ -499,8 +499,8 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.subjectMaster=new SubjectMaster[1];
                            selectBoxMaster.subjectMaster[0]=new SubjectMaster();
-                           selectBoxMaster.subjectMaster[0].setSubjectID("Select option");
-                           selectBoxMaster.subjectMaster[0].setSubjectName("Select option");
+                           selectBoxMaster.subjectMaster[0].setSubjectID("");
+                           selectBoxMaster.subjectMaster[0].setSubjectName("");
                          }else{
                            throw ex;
                        }
@@ -520,8 +520,8 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
 
                        selectBoxMaster.subjectMaster=new SubjectMaster[l_subjectList.size()+1];
                        selectBoxMaster.subjectMaster[0]=new SubjectMaster();
-                       selectBoxMaster.subjectMaster[0].setSubjectID("Select option");
-                       selectBoxMaster.subjectMaster[0].setSubjectName("Select option");
+                       selectBoxMaster.subjectMaster[0].setSubjectID("");
+                       selectBoxMaster.subjectMaster[0].setSubjectName("");
                        for(int k=1;k<=l_subjectList.size();k++){
 
                            String l_subjectID=l_subjectList.get(k-1).get(1).trim();
@@ -556,7 +556,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.examMaster=new ExamMaster[1];
                            selectBoxMaster.examMaster[0]=new ExamMaster();
-                           selectBoxMaster.examMaster[0].setExam("Select option");
+                           selectBoxMaster.examMaster[0].setExam("");
                          }else{
                            throw ex;
                        }
@@ -574,7 +574,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
 
                        selectBoxMaster.examMaster=new ExamMaster[l_examList.size()+1];
                        selectBoxMaster.examMaster[0]=new ExamMaster();
-                       selectBoxMaster.examMaster[0].setExam("Select option");
+                       selectBoxMaster.examMaster[0].setExam("");
                        for(int k=1;k<=l_examList.size();k++){
 
                            String l_exam=l_examList.get(k-1).get(1).trim();
@@ -604,7 +604,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.notificationMaster=new NotificationMaster[1];
                            selectBoxMaster.notificationMaster[0]=new NotificationMaster();
-                           selectBoxMaster.notificationMaster[0].setNotificationType("Select option");
+                           selectBoxMaster.notificationMaster[0].setNotificationType("");
                          }else{
                            throw ex;
                        }
@@ -620,7 +620,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
 
                        selectBoxMaster.notificationMaster=new NotificationMaster[l_notificationList.size()+1];
                        selectBoxMaster.notificationMaster[0]=new NotificationMaster();
-                       selectBoxMaster.notificationMaster[0].setNotificationType("Select option");
+                       selectBoxMaster.notificationMaster[0].setNotificationType("");
                        for(int k=1;k<=l_notificationList.size();k++){
 
                            String l_notificationType=l_notificationList.get(k-1).get(1).trim();
@@ -653,7 +653,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.feeMaster=new FeeMaster[1];
                            selectBoxMaster.feeMaster[0]=new FeeMaster();
-                           selectBoxMaster.feeMaster[0].setFeeType("Select option");
+                           selectBoxMaster.feeMaster[0].setFeeType("");
                         }else{
                            throw ex;
                        }
@@ -670,7 +670,7 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                        dbg("l_feeList"+l_feeList.size());
                        selectBoxMaster.feeMaster=new FeeMaster[l_feeList.size()+1];
                        selectBoxMaster.feeMaster[0]=new FeeMaster();
-                       selectBoxMaster.feeMaster[0].setFeeType("Select option");
+                       selectBoxMaster.feeMaster[0].setFeeType("");
                        for(int k=1;k<=l_feeList.size();k++){
 
                            String l_feeType=l_feeList.get(k-1).get(1).trim();
@@ -701,11 +701,11 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
                            exceptionRised=true;
                            selectBoxMaster.periodmaster=new PeriodMaster[1];
                            selectBoxMaster.periodmaster[0]=new PeriodMaster();
-                           selectBoxMaster.periodmaster[0].setPeriodNo("Select option");
-                           selectBoxMaster.periodmaster[0].setStartTimeHour("Select option");
-                           selectBoxMaster.periodmaster[0].setStartTimeMin("Select option");
-                           selectBoxMaster.periodmaster[0].setEndTimeHour("Select option");
-                           selectBoxMaster.periodmaster[0].setEndTimeMin("Select option");
+                           selectBoxMaster.periodmaster[0].setPeriodNo("");
+                           selectBoxMaster.periodmaster[0].setStartTimeHour("");
+                           selectBoxMaster.periodmaster[0].setStartTimeMin("");
+                           selectBoxMaster.periodmaster[0].setEndTimeHour("");
+                           selectBoxMaster.periodmaster[0].setEndTimeMin("");
                         }else{
                            throw ex;
                        }
@@ -719,11 +719,11 @@ public class SelectBoxMasterService implements ISelectBoxMasterService{
 
                        selectBoxMaster.periodmaster=new PeriodMaster[l_periodList.size()+1];
                        selectBoxMaster.periodmaster[0]=new PeriodMaster();
-                       selectBoxMaster.periodmaster[0].setPeriodNo("Select option");
-                       selectBoxMaster.periodmaster[0].setStartTimeHour("Select option");
-                       selectBoxMaster.periodmaster[0].setStartTimeMin("Select option");
-                       selectBoxMaster.periodmaster[0].setEndTimeHour("Select option");
-                       selectBoxMaster.periodmaster[0].setEndTimeMin("Select option");
+                       selectBoxMaster.periodmaster[0].setPeriodNo("");
+                       selectBoxMaster.periodmaster[0].setStartTimeHour("");
+                       selectBoxMaster.periodmaster[0].setStartTimeMin("");
+                       selectBoxMaster.periodmaster[0].setEndTimeHour("");
+                       selectBoxMaster.periodmaster[0].setEndTimeMin("");
                        for(int k=1;k<=l_periodList.size();k++){
 
                            String l_periodNumber=l_periodList.get(k-1).get(3).trim();

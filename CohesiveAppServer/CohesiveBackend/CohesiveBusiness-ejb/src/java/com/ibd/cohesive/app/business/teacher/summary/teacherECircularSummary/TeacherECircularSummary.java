@@ -262,7 +262,7 @@ public class TeacherECircularSummary implements ITeacherECircularSummary{
       
 
 
-      if(l_filterObject.getString("signStatus").equals("Select option")){
+      if(l_filterObject.getString("signStatus").equals("")){
           
           teacherECircular.filter.setSignStatus("");
       }else{

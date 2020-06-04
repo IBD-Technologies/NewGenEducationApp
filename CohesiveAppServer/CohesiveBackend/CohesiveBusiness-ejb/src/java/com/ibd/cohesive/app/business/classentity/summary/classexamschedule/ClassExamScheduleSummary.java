@@ -253,7 +253,7 @@ public class ClassExamScheduleSummary implements IClassExamScheduleSummary{
       BSValidation bsv=inject.getBsv(session);
 //      classExamSchedule.filter.setStandard(l_filterObject.getString("standard"));
 //      classExamSchedule.filter.setSection(l_filterObject.getString("section"));
-      if(l_filterObject.getString("class").equals("Select option")){
+      if(l_filterObject.getString("class").equals("")){
           classExamSchedule.filter.setStandard("");
           classExamSchedule.filter.setSection("");
       }else{
@@ -265,7 +265,7 @@ public class ClassExamScheduleSummary implements IClassExamScheduleSummary{
       
       }
       
-      if(l_filterObject.getString("authStat").equals("Select option")){
+      if(l_filterObject.getString("authStat").equals("")){
           
           classExamSchedule.filter.setAuthStatus("");
       }else{
@@ -274,7 +274,7 @@ public class ClassExamScheduleSummary implements IClassExamScheduleSummary{
       }
       
       
-      if(l_filterObject.getString("exam").equals("Select option")){
+      if(l_filterObject.getString("exam").equals("")){
           
           classExamSchedule.filter.setExam("");
       }else{

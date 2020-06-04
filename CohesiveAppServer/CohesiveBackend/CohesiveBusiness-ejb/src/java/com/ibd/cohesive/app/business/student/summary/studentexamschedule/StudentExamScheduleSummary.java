@@ -258,7 +258,7 @@ public class StudentExamScheduleSummary implements IStudentExamScheduleSummary{
      
      
         
-        if(l_filterObject.getString("exam").equals("Select option")){
+        if(l_filterObject.getString("exam").equals("")){
           
           studentExamSchedule.filter.setExam("");
         }else{

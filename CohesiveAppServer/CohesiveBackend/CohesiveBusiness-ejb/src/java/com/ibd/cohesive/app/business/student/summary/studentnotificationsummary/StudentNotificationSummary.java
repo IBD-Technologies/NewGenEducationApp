@@ -261,7 +261,7 @@ public class StudentNotificationSummary implements IStudentNotificationSummary{
       studentNotification.filter.setFromDate(l_filterObject.getString("fromDate"));
       studentNotification.filter.setToDate(l_filterObject.getString("toDate"));
       
-//      if(l_filterObject.getString("notificationType").equals("Select option")){
+//      if(l_filterObject.getString("notificationType").equals("")){
 //          
 //          studentNotification.filter.setNotificationType("");
 //      }else{

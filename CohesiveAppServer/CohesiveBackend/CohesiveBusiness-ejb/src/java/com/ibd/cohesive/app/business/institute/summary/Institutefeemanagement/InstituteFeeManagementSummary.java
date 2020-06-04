@@ -260,7 +260,7 @@ public class InstituteFeeManagementSummary implements IInstituteFeeManagementSum
 //      instituteFeeManagement.filter.setRecordStatus(l_filterObject.getString("recordStat"));
 //      instituteFeeManagement.filter.setAuthStatus(l_filterObject.getString("authStat"));
         
-        if(l_filterObject.getString("feeType").equals("Select option")){
+        if(l_filterObject.getString("feeType").equals("")){
 
            instituteFeeManagement.filter.setFeeType("");
         }else{
@@ -269,7 +269,7 @@ public class InstituteFeeManagementSummary implements IInstituteFeeManagementSum
         }
         instituteFeeManagement.filter.setDueDate(l_filterObject.getString("dueDate"));
         
-        if(l_filterObject.getString("authStat").equals("Select option")){
+        if(l_filterObject.getString("authStat").equals("")){
           
           instituteFeeManagement.filter.setAuthStatus("");
         }else{
