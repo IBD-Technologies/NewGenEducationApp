@@ -6,45 +6,6 @@
 var confirmation=false;
 var dialogRemarks;
  
-$(document).ready(function(){
-    
-fn_Show_Excep = function(id,err_code,position)
-{
-   var idSelector = "#".concat(id); 
-$(idSelector).popover  ();
-//$(idSelector).attr("data-trigger", "focus");
-
-$(idSelector).attr("data-content", fn_get_error_message(err_code));
-$(idSelector).attr("data-placement",position);
-//$(idSelector).attr("placement",position);
-
-//$(idSelector).popover('toggleEnabled');
-//$(idSelector).popover('toggle');
-$(idSelector).popover('show');
-$(idSelector).popover('enable');
-
-};
- fn_hide_Exception = function(id)
-{ 
-    var idSelector = "#".concat(id);
-    $(idSelector).popover('hide');
-  //  $(idSelector).popover('disable');
-    $("[id^='popover']").remove();
-
-$(idSelector).removeAttr("data-trigger");
-$(idSelector).removeAttr("data-content");
-$(idSelector).removeAttr("data-placement");
-$(idSelector).removeAttr("data-original-title");
-$(idSelector).removeAttr("aria-describedby");
-
-
-    //$(idSelector).popover('hide');   
-} ;
-
-/*$(idSelector).keypress(function(){
-   fn_hide_Exception();
-});*/
-});
 
 function fn_get_error_message(err_code)
 {
@@ -100,7 +61,7 @@ function fn_Show_Exception_With_Param(err_code,errParam)
 	}
     else if(errArray[0].ErrorType =='C')
 	{	
-	 fn_show_ConfirmationNew(errArray);
+	// fn_show_ConfirmationNew(errArray);
 	 if(confirmation)
 		return true;
 	 else
@@ -151,15 +112,6 @@ function fn_show_backend_exception(error)
 {
 	var i;
         var errMessage=error[0].errorMessage;
-	/*for(i=0;i<error.length;i++)
-	{
- 	          //if (error.length>1)
-		  // bodyHtml += (i+1) +".";
-		  // bodyHtml += error[i].errorCode + " " +error[i].errorMessage;
-		   //bodyHtml +=   "</p>";
-                     errMessage = error[i].errorMessage;
-               break;  
-	}*/	   
 	
     	swal({
         title: "Error",
@@ -169,9 +121,28 @@ function fn_show_backend_exception(error)
         confirmButtonColor: "#fb483a",
         confirmButtonText: "Ok",
         closeOnConfirm: true
+    }, function(){
+           if(error != null && (typeof error != undefined))
+           {
+             if(error[0].errorCode == 'BS_VAL_101' || error[0].errorCode == 'BS_VAL_103'||error[0].errorCode == 'BS_VAL_026' ){
+               sessionStorage.removeItem('Rst');
+               parentStateChange({
+                   nokotser:''
+               });
+               window.parent.launchMainScreen();
+                  }
+            else if(error[0].errorCode == 'BS_VAL_100'){
+                sessionStorage.removeItem('GLOBAL');
+                sessionStorage.removeItem('Rst');
+                window.location.href = "/Login.min.jsp";
+                }
+            else{
+             return
+               }
+            }
+         
     });
 
-  
 }	
 function fn_show_backend_Information(error,type)
 {
@@ -219,17 +190,6 @@ function fn_show_InformationNew(error)
 {
 	var message;
 	message=error[0].errorMessage;
-		
-	//var i;
-	/*for(i=0;i<error.length;i++)
-	{
-            
-// 	       bodyHtml +=   "<p>";
-//		   if (error.length>1)
-//		   bodyHtml += (i+1) +".";
-//		   bodyHtml += error[i].errorMessage;
-		   bodyHtml +=   "</p>";
-	}*/	   
 	
         	swal({
         title: 'Information',
@@ -241,199 +201,3 @@ function fn_show_InformationNew(error)
         closeOnConfirm: true
     });
 }
-
-
-function fn_show_backend_confirmation(error,$scope,operation)
-{
-	confirmation =false;
-	dialogRemarks=null;
-	var innerHtml,bodyHtml;
-	
-	innerHtml="<div id =\"modal1\" class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">";
-	innerHtml+="<div class=\"modal-dialog model-dialog-centered modal-sm\">";
-	innerHtml+="<div class=\"modal-content\" style=\"color:#228272\">";
-	innerHtml+="<div class=\"modal-header\">";
-	//if(type =='S')
-    innerHtml+="<h5 class=\"modal-title\" id=\"exampleModalLabel\" style=\"text-align:center\"><strong style=\"color:blue;text-align:center\">Confirmation!</strong></h5>";
-    //else if(type=='I')
-	 //innerHtml+="<h5 class=\"modal-title\" id=\"exampleModalLabel\" style=\"text-align:center\"><strong style=\"color:Orange;text-align:center\">Information!</strong></h5>";
-   
-	innerHtml+="<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">";
-    innerHtml+="<span aria-hidden=\"true\"><strong>&times;</strong></span>";
-    innerHtml+="</button>";
-	innerHtml+="</div>";
-    innerHtml+="<div class=\"modal-body\">";
-	bodyHtml ="<div>";
-		
-	var i;
-	for(i=0;i<error.length;i++)
-	{
- 	       bodyHtml +=   "<p>";
-		   if (error.length>1)
-		   bodyHtml += (i+1) +".";
-		   bodyHtml += error[i].errorMessage;
-		   bodyHtml +=   "</p>";
-	}
-   if(operation=='Delete' || operation=='Auth' || operation=='Reject')
-   {
-   // bodyHtml+="<label for=\"remarks\" class=\"col-3 col-form-label\">Remarks</label>";	   
-	bodyHtml+="<input id=\"dialogMakerRemarks\" type=\"text\" placeholder=\"Enter Remarks\" class=\"form-control\">";  
-   }
-	bodyHtml+="</div>";
-	
-	innerHtml+=bodyHtml;
-	innerHtml+="</div>";
-	innerHtml+="<div class=\"modal-footer\">";
-    innerHtml+="<button id=\"confirmYes\" type=\"button\" class=\"btn btn-info\" data-dismiss=\"modal\">Yes</button>";
-    innerHtml+="<button id=\"confirmNo\" type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">No</button>";
-    innerHtml+="</div>";
-	
-	
-	innerHtml+="</div>";
-	
-	innerHtml+="</div>";
-	
-	innerHtml+="</div>";
-	
-	$("#snackbar").append(innerHtml);
-	$("#modal1").modal({backdrop:true,keyboard:true,focus:true,show:true}); 
-	$('#modal1').modal('handleUpdate');
-	
-	
-	$('#modal1').on('shown.bs.modal', function () {
-    $('#modal1').trigger('focus');
-     });
-	
-$('#modal1').on('hidden.bs.modal', function (e) {
-  
-  $('#modal1').modal('dispose');
-  $("#modal1").remove();
-	
-  if($('#modal').length > 0)
-  { 
-	 $("#modal").modal({backdrop:true,keyboard:true,focus:true,show:true}); 
-     $('#modal').modal('handleUpdate'); 	
-  } 
-  //if (operation =='Delete')
-	 //dialogRemarks =$('#dialogMakerRemarks').text;
-  
-});	
-
-$('#confirmYes').click(function(){
- confirmation = true;
- // $location.path()='/PostTranOperation';
- // $anchorScroll();
-if (operation =='Delete')
-{
-	dialogRemarks =$('#dialogMakerRemarks').val();
-  	$scope.fnDeleteAfterConfirmation();
-}
-else if (operation =='Reject')
-{	
-dialogRemarks =$('#dialogMakerRemarks').val();
-$scope.fnRejectAfterConfirmation();
-}
-else if (operation =='Auth')
-{
-dialogRemarks =$('#dialogMakerRemarks').val();
-$scope.fnAuthAfterConfirmation();
-}
-
-});
-
-$('#confirmNo').click(function(){confirmation = false;});
-
-
-}
-
-function fn_show_ConfirmationNew(error)
-{
-	confirmation =false;
-	var innerHtml,bodyHtml;
-	
-	innerHtml="<div id =\"modal1\" class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">";
-	innerHtml+="<div class=\"modal-dialog model-dialog-centered modal-sm\">";
-	innerHtml+="<div class=\"modal-content\" style=\"color:#228272\">";
-	innerHtml+="<div class=\"modal-header\">";
-	//if(type =='S')
-    innerHtml+="<h5 class=\"modal-title\" id=\"exampleModalLabel\" style=\"text-align:center\"><strong style=\"color:blue;text-align:center\">Confirmation!</strong></h5>";
-    //else if(type=='I')
-	 //innerHtml+="<h5 class=\"modal-title\" id=\"exampleModalLabel\" style=\"text-align:center\"><strong style=\"color:Orange;text-align:center\">Information!</strong></h5>";
-   
-	innerHtml+="<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">";
-    innerHtml+="<span aria-hidden=\"true\"><strong>&times;</strong></span>";
-    innerHtml+="</button>";
-	innerHtml+="</div>";
-    innerHtml+="<div class=\"modal-body\">";
-	bodyHtml ="<div>";
-		
-	var i;
-	for(i=0;i<error.length;i++)
-	{
- 	       bodyHtml +=   "<p>";
-		   if (error.length>1)
-		   bodyHtml += (i+1) +".";
-		   bodyHtml += error[i].ErrorMessage;
-		   bodyHtml +=   "</p>";
-	}	   
-		   
-	
-	bodyHtml+="</div>";
-	
-	innerHtml+=bodyHtml;
-	innerHtml+="</div>";
-	innerHtml+="<div class=\"modal-footer\">";
-    innerHtml+="<button id=\"confirmYes\" type=\"button\" class=\"btn btn-info\" data-dismiss=\"modal\">Yes</button>";
-    innerHtml+="<button id=\"confirmNo\" type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">No</button>";
-    innerHtml+="</div>";
-	
-	
-	innerHtml+="</div>";
-	
-	innerHtml+="</div>";
-	
-	innerHtml+="</div>";
-	
-	$("#snackbar").append(innerHtml);
-	$("#modal1").modal({backdrop:true,keyboard:true,focus:true,show:true}); 
-	$('#modal1').modal('handleUpdate');
-	
-	
-	$('#modal1').on('shown.bs.modal', function () {
-    $('#modal1').trigger('focus');
-     });
-	
-$('#modal1').on('hidden.bs.modal', function (e) {
-  
-  $('#modal1').modal('dispose');
-  $("#modal1").remove();
-	
-  if($('#modal').length > 0)
-  { 
-	 $("#modal").modal({backdrop:true,keyboard:true,focus:true,show:true}); 
-     $('#modal').modal('handleUpdate'); 	
-  } 
-  
-});	
-
-$('#confirmYes').click(function(){
- confirmation =true;
- });
- 
-
-$('#confirmNo').click(function(){
-	confirmation= false;
- });
-
-//$('#confirmNo').click(function(){confirmation = false;});
-
-
-}
-
-
-
-
-
-
-
-

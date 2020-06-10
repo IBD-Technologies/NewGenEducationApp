@@ -6,14 +6,14 @@ var QueryConfig = {Operation: 'query',
                     triggerElement: stepperOneTemplate},
                 {stepNumber: 2, stepperLabel: 'Search record for view',
                     triggerElement: searchFilter
-                            
+
                 },
                 {stepNumber: 3, stepperLabel: 'Choose record for Full detailed view',
                     triggerElement: readOnlyTable
                 },
                 {stepNumber: 4, stepperLabel: 'Full view of chosen record',
                     triggerElement: fullView
-                           
+
                 }
             ]
 };

@@ -27,7 +27,8 @@
 
         <!-- Animation Css -->
         <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
-
+         <!-- Sweet Alert  -->
+        <link href="plugins/sweetalert/sweetalert.min.css" rel="stylesheet">
 
         <!-- JQuery DataTable Css -->
         <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css" >
@@ -808,7 +809,8 @@
        <!-- <script src="plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script> -->
         <!-- Waves Effect Plugin Js -->
         <script src="plugins/node-waves/waves.min.js"></script>
-
+         <!--Sweet Alert JS ---->
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>   
 
         <!-- Custom Js -->
        <!-- <script src="js/Utils/scrollToTop.min.js"></script> -->

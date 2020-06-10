@@ -103,4 +103,22 @@ function stepperAction(currentStep, startStep, endStep) {
         }
     }  
     );
+   $('.searchField').keyup(function()
+    {    
+        searchText =$('#'+this.id).val(); 
+      if(this.id.includes('Student'))
+      {
+          
+          SearchConfig={fieldID:this.id,headings:['Name','Id','Class'],
+                                    apiResultCols:['StudentName','StudentId','Standard'],
+                                    resultreduceFields:'StudentName~StudentId',/*Api Result column and search fields and reduce fields should have same name*/
+                                    searchService:'StudentSearchService'};
+                     }  
+                     
+                   launchSuggestion();  
+                 }                    
+                             
+     );    
+     
+    
 }

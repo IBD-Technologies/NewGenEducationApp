@@ -21,10 +21,12 @@ import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.naming.NamingException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.CookieParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -72,11 +74,14 @@ public class AppResource {
     /**
      * PUT method for updating or creating an instance of AppResource
      * @param content representation for the resource
+     * @param cookie
+     * @return 
      */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
      @Produces(MediaType.APPLICATION_JSON)
-    public JsonObject AppGateway(JsonObject content) {
+    
+    public JsonObject AppGateway(JsonObject content, @CookieParam("ivas") Cookie cookie) {
 //        JsonObject response =null;
         JsonObjectBuilder response=Json.createObjectBuilder();
         try {
@@ -159,7 +164,27 @@ public class AppResource {
                 String token=content.getString("token");
                 String userID=content.getString("userID");
                 String instituteID=content.getString("instituteID");
-                String secKey=content.getString("secKey");
+                String source;
+                String secKey;
+                try
+                {   
+                 source=content.getString("source");
+                }
+                catch(Exception e)
+                {
+                    source="";
+                }
+                dbg("source---> "+source);
+                if(source.equals("NewGenEducationWeb"))
+                {
+                    token=cookie.getValue();
+                    secKey=content.getString("token");
+                    dbg("secKey---> "+secKey);
+                }
+                else
+                {
+                  secKey=content.getString("secKey");
+                  }
                 String service=content.getString("service");
                 
                 JWEInput jweInput=new JWEInput(token,userID,instituteID,secKey);

@@ -248,5 +248,6 @@ var CreateConfig = {Operation: 'create',
                 {stepNumber: 6, stepperLabel: 'Submit',
                     triggerElement:getLaststepTemplate('create',6) 
                 }]
-} 
+} ;
 
+ 

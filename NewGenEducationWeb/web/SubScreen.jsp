@@ -42,7 +42,8 @@
 
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.min.css" rel="stylesheet">
-
+        <!-- Sweet Alert  -->
+         <link href="plugins/sweetalert/sweetalert.min.css" rel="stylesheet">
 
         <!-- Bs Stepper css -->
         <link rel="stylesheet" href="css/bs-stepper.min.css">
@@ -60,6 +61,8 @@
           response.setHeader("X-Frame-Options","SAMEORIGIN");  
           response.setHeader("Content-Security-Policy", "default-src 'self';font-src 'self' https://fonts.gstatic.com/ data: fonts.gstatic.com ;script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';base-uri 'none';form-action 'self';frame-ancestors 'self';frame-src 'self'");
         %>
+        <input type="hidden" id="testEnv" ng-model="testEnv" value="${testEnv}">
+         
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
@@ -219,10 +222,10 @@
         <script src="js/admin.min.js"></script>
         <!-- <script src="js/pages/index.js"></script> -->
         <script src="js/pages/ui/tooltips-popovers.min.js"></script>
-       
-
+        <!--Sweet Alert JS ---->
+        <script src="plugins/sweetalert/sweetalert.min.js"></script> 
+           
                 <!-- Custom Js -->
-        <script src="js/Utils/backEnd.min.js"></script>
         <script src="js/Utils/Exception.min.js"></script>
         <script src="js/Utils/spinner.min.js"></script>
         <script src="js/Utils/config.min.js"></script>
@@ -236,6 +239,9 @@
         <script src="js/Utils/stepperAction.min.js"></script>
         <script type="text/javascript" src="js/Utils/ScreenUtils.min.js"></script>
         <script src="js/Utils/LastStepTemplate.min.js"></script>
+        <script src="js/modules/HttpUtils.min.js"></script>
+        <script src="js/modules/ActionApi.js"></script>
+        <script src="js/modules/SearchUtils.js"></script>
         <script src="js/config/SubScreen/SubScreen.min.js"></script>
 
   

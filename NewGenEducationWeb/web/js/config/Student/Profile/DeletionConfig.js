@@ -20,4 +20,4 @@ var DeletionConfig = {Operation: 'deletion',
                 }
 
             ]
-}
+};

@@ -152,7 +152,7 @@ Instructions = [{Operation: 'create',
         Steps: [
             {stepNumber: 2,
                 instructions: [
-                    'Please find the record to Query by entering the filter criteria',
+                    'Please find the record to view by entering the filter criteria',
                     'You have to enter either student or class in the filter criteria',
                     'once enter the filter , please click Next in the footer'
 

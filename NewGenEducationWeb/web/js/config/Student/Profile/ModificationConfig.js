@@ -18,4 +18,4 @@ var ModificationConfig = {Operation: 'modification',
                 }
 
             ]
-}
+};

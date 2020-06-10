@@ -338,7 +338,7 @@ private String getServiceName(String URI)
             { 
                if(nrb!=null) 
                jweinput.setInstid(nrb);
-               httpRequest.setAttribute("nokotser",restok.getWebResourceToken(jweinput, ServiceName));
+              // httpRequest.setAttribute("nokotser",restok.getWebResourceToken(jweinput, ServiceName));
                 httpRequest.setAttribute("testEnv",test);
               chain.doFilter(request, response); 
             }

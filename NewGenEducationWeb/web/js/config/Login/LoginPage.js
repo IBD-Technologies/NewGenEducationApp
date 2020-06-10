@@ -64,7 +64,8 @@ $('#sign_in').validate({
      error[0].errorMessage=$("#errMessage").val();
                    
     }
-     fnErrorResponseHandling(error);
+     /*fnErrorResponseHandling(error);*/
+     fn_show_backend_exception(error);
     }  
 
 $('#loginButton').click(function(event)

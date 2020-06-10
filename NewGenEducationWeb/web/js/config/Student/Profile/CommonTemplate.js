@@ -255,19 +255,21 @@ var fullView=
                             auditCardsTemplate +
                             '</div>\n' +
                             '</div>\n' ;
-var searchFilter=                            '<div class="col-sm-6">\n' +
+var searchFilter=         '<div class="col-sm-6">\n' +
                             '<b>Name</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="1" type="text" id="student_name" class="form-control" placeholder="Enter student name" >\n' +
+                            '<input tabindex="1" type="text" id="StudentName" class="form-control searchField" placeholder="Enter student name" >\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
+                           
+                            
                             '<div class="col-sm-6">\n' +
                             '<b>ID</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="2" type="text" id="student_id" class="form-control" placeholder="Enter student id ">\n' +
+                            '<input tabindex="2" type="text" id="StudentId" class="form-control searchField" placeholder="Enter student id ">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -294,13 +296,8 @@ var searchFilter=                            '<div class="col-sm-6">\n' +
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
-                            '</div>\n' +
-                            '<div class="card searchResult">\n' +
-                            '<div class="header" id="searchResultHeader">\n' +
-                            '</div>\n' +
-                            '<div class="body" id="searchResultBody">\n' +
-                            '</div>\n' +
                             '</div>\n' ;
+                          
 var readOnlyTable= '<div class="body">\n' +
                             '<div class="table-responsive">\n' +
                             '<table id="student_data_table" class="table table-bordered table-striped table-hover js-basic-example dataTable">\n' +

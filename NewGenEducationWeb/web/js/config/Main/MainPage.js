@@ -29,11 +29,18 @@ function fngetSrc(url) {
 $(document).ready(function () {
 
     uhtuliak = $("#uhtuliak").val();
-    User.Id = $("#UIDServer").val();
-    Institute.ID = $("#InstituteServer").val();
-    Institute.Name = $("#InstituteNameServer").val();
-    $("#iID").val(Institute.ID);
-    $("#iName").val(Institute.Name);
+    //User.Id = $("#UIDServer").val();
+    //Institute.ID = $("#InstituteServer").val();
+    //Institute.Name = $("#InstituteNameServer").val();
+    //$("#iID").val(Institute.ID);
+    //$("#iName").val(Institute.Name);
+   sessionStorage.setItem('GLOBAL',
+                          JSON.stringify(
+                           {instituteID:$("#InstituteServer").val(),
+                             userID:$("#UIDServer").val(),
+                             instituteName:$("#InstituteNameServer").val()
+                           }
+                           ));
 //$('#scrollTop').click(function(){topFunction()});
     
      $('#StudentProfile').click(function () {
