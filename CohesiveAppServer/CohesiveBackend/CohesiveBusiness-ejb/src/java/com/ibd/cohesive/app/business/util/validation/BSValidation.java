@@ -83,7 +83,11 @@ import javax.json.JsonReader;
 /**
  *
  * @author IBD Technologies
- */
+************Change desc : Unauth pending items dashborad service fails 
+*           Change tag:Un auth pedning Items fix         
+            Done by : Rajkumar v
+            Date:05-06-2020
+*/
 public class BSValidation {
 
     Debug debug;
@@ -1120,21 +1124,44 @@ public class BSValidation {
 
                     dbg("userType T--->serviceType--->S--->studentID_dummy" + studentID_dummy);
 
-                    if (request.getReqHeader().getService().equals("StudentProfile") && !request.getReqHeader().getOperation().equals("View")) {
-
+                    //Un auth pedning Items fix starts
+                      // if (request.getReqHeader().getService().equals("StudentProfile") && !request.getReqHeader().getOperation().equals("View")) {
+                     standard_dummy="";
+                     section_dummy="";
+                      if (request.getReqHeader().getService().equals("StudentProfile")) { 
+                      try{
+                           
                         RequestBody<StudentProfile> body = request.getReqBody();
-
                         standard_dummy = body.get().getGen().getStandard();
                         section_dummy = body.get().getGen().getSection();
-                    } else {
+                       }
+                       catch(Exception e)
+                       {
+                        standard_dummy="";
+                        section_dummy="";
+                       }  
+                       }
+                      if (standard_dummy.isEmpty()||standard_dummy.equals(""))
+                           {    
+                           String[] pkey = {studentID_dummy};
+                        ArrayList<String> l_studentList = pds.readRecordPData(session, dbSession, "INSTITUTE" + i_db_properties.getProperty("FOLDER_DELIMITER") + l_instituteID + i_db_properties.getProperty("FOLDER_DELIMITER") + l_instituteID, "INSTITUTE", "IVW_STUDENT_MASTER", pkey);
+                        standard_dummy = l_studentList.get(2).trim();
+                        section_dummy = l_studentList.get(3).trim();    
+                           }
+                       
+                        
+                        
+                        
+                  /*  } else {
 
                         String[] pkey = {studentID_dummy};
                         ArrayList<String> l_studentList = pds.readRecordPData(session, dbSession, "INSTITUTE" + i_db_properties.getProperty("FOLDER_DELIMITER") + l_instituteID + i_db_properties.getProperty("FOLDER_DELIMITER") + l_instituteID, "INSTITUTE", "IVW_STUDENT_MASTER", pkey);
                         standard_dummy = l_studentList.get(2).trim();
                         section_dummy = l_studentList.get(3).trim();
 
-                    }
-
+                    }*/
+                    //Un auth pedning Items fix ends
+                  
                     dbg("userType T--->serviceType--->S--->standard_dummy" + standard_dummy);
                     dbg("userType T--->serviceType--->S--->section_dummy" + section_dummy);
 

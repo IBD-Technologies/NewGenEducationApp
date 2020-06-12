@@ -614,7 +614,7 @@ public class StudentProfileSummary implements IStudentProfileSummary{
              String l_studentID=studentProfile.getFilter().getStudentID();
              String l_instituteID=request.getReqHeader().getInstituteID();
              String l_authStatus=studentProfile.getFilter().getAuthStatus();
-             
+             /*
              if(l_studentID!=null&&!l_studentID.isEmpty()){
                  
                 if(!bsv.studentIDValidation(l_studentID, l_instituteID, session, dbSession, inject)){
@@ -622,7 +622,7 @@ public class StudentProfileSummary implements IStudentProfileSummary{
                     errhandler.log_app_error("BS_VAL_003","studentID");
                 }
                  
-             }
+             }*/
              
              if(l_authStatus!=null&&!l_authStatus.isEmpty()){
                  

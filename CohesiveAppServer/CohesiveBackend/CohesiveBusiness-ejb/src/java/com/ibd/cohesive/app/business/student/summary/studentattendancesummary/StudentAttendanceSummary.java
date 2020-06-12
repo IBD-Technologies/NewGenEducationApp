@@ -1140,14 +1140,14 @@ public class StudentAttendanceSummary implements IStudentAttendanceSummary {
             String l_fromDate = studentAttendance.getFilter().getFromDate();
             String l_toDate = studentAttendance.getFilter().getToDate();
 
-            if (l_studentID != null && !l_studentID.isEmpty()) {
+           /* if (l_studentID != null && !l_studentID.isEmpty()) {
 
                 if (!bsv.studentIDValidation(l_studentID, l_instituteID, session, dbSession, inject)) {
                     status = false;
                     errhandler.log_app_error("BS_VAL_003", "studentID");
                 }
 
-            }
+            }*/
 
             if (l_fromDate != null && !l_fromDate.isEmpty() && l_toDate != null && !l_toDate.isEmpty()) {
 

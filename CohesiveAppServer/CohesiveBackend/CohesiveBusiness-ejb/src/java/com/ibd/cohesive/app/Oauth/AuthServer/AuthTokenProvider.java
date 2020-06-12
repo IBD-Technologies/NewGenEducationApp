@@ -8,6 +8,8 @@ package com.ibd.cohesive.app.Oauth.AuthServer;
 
 import com.ibd.cohesive.app.business.util.dependencyInjection.AppDependencyInjection;
 import com.ibd.cohesive.db.core.pdata.IPDataService;
+import com.ibd.cohesive.db.readbuffer.DBRecord;
+import com.ibd.cohesive.db.readbuffer.IDBReadBufferService;
 import com.ibd.cohesive.db.session.DBSession;
 import com.ibd.cohesive.util.IBDProperties;
 import com.ibd.cohesive.util.exceptions.DBProcessingException;
@@ -31,6 +33,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.ejb.ConcurrencyManagement;
@@ -202,7 +205,16 @@ token[2]=UserId+"~"+InstituteID+"~"+instituteName;
        String[] l_pkey={UserId};
        ArrayList<String>l_userList=pds.readRecordPData(session,dbSession,"USER"+i_db_properties.getProperty("FOLDER_DELIMITER")+"User"+i_db_properties.getProperty("FOLDER_DELIMITER")+"User", "USER", "UVW_USER_PROFILE",l_pkey);
        token[3]=l_userList.get(13).trim();
-
+       token[7]=l_userList.get(1).trim();
+       token[8]=l_userList.get(2).trim();
+       
+       
+       
+       
+       dbg("user name-->"+token[7],session);
+       dbg("user email id-->"+token[7],session);
+       
+       
        dbg("user type-->"+token[3],session);
        
        
@@ -225,7 +237,6 @@ token[2]=UserId+"~"+InstituteID+"~"+instituteName;
        token[4]=language;
        token[5]=plan;
        token[6]=countryCode;
-       
        }else{
            
            token[4]="EN";

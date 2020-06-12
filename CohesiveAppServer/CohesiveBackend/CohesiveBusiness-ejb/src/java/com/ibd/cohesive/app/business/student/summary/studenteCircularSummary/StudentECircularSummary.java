@@ -670,14 +670,14 @@ public class StudentECircularSummary implements IStudentECircularSummary{
              String l_studentID=studentECircular.getFilter().getStudentID();
              String l_instituteID=request.getReqHeader().getInstituteID();
              
-             if(l_studentID!=null&&!l_studentID.isEmpty()){
+            /* if(l_studentID!=null&&!l_studentID.isEmpty()){
                  
                 if(!bsv.studentIDValidation(l_studentID, l_instituteID, session, dbSession, inject)){
                     status=false;
                     errhandler.log_app_error("BS_VAL_003","studentID");
                 }
                  
-             }
+             }*/
      
              
              
@@ -686,11 +686,6 @@ public class StudentECircularSummary implements IStudentECircularSummary{
             
              
             dbg("end of student progreass detailDataValidation");
-        } catch (DBProcessingException ex) {
-            dbg(ex);
-            throw new DBProcessingException("DBProcessingException" + ex.toString());
-        } catch(DBValidationException ex){
-            throw ex;
         }
         catch (Exception ex) {
             dbg(ex);

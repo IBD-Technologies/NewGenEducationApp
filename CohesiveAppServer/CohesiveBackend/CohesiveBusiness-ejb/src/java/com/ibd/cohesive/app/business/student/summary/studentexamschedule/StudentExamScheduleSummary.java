@@ -535,14 +535,14 @@ public class StudentExamScheduleSummary implements IStudentExamScheduleSummary{
              String l_instituteID=request.getReqHeader().getInstituteID();
              String l_exam=studentExamSchedule.getFilter().getExam();
              
-             if(l_studentID!=null&&!l_studentID.isEmpty()){
+            /* if(l_studentID!=null&&!l_studentID.isEmpty()){
                  
                 if(!bsv.studentIDValidation(l_studentID, l_instituteID, session, dbSession, inject)){
                     status=false;
                     errhandler.log_app_error("BS_VAL_003","studentID");
                 }
                  
-             }
+             }*/
 
             
              

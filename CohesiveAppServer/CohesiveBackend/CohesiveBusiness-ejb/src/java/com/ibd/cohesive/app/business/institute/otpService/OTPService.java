@@ -528,7 +528,7 @@ public class OTPService implements IOTPService{
             IAmazonSMSService smsService=inject.getAmazonSMSService();
             BusinessService bs=inject.getBusinessService(session);
             
-            String message="Your OTP is "+otp+". DO not disclose to anyone.";
+            String message="OTP for resetting your NewgenEducation App account password is "+otp+". DO not disclose to anyone.";
             smsService.sendSMS(message, mobileNo, session,instituteID);
             dbg("OTP send");
             

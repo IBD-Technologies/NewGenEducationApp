@@ -545,14 +545,14 @@ public class StudentTimeTableSummary implements IStudentTimeTableSummary{
              String l_instituteID=request.getReqHeader().getInstituteID();
              String l_authStatus=studentTimeTable.getFilter().getAuthStatus();
              
-             if(l_studentID!=null&&!l_studentID.isEmpty()){
+            /* if(l_studentID!=null&&!l_studentID.isEmpty()){
                  
                 if(!bsv.studentIDValidation(l_studentID, l_instituteID, session, dbSession, inject)){
                     status=false;
                     errhandler.log_app_error("BS_VAL_003","studentID");
                 }
                  
-             }
+             }*/
 
              
              if(l_authStatus!=null&&!l_authStatus.isEmpty()){
