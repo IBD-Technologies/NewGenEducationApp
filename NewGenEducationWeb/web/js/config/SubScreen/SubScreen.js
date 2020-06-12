@@ -18,7 +18,7 @@ app.controller('SubScreenCtrl', function ($scope, $compile, $timeout) {
     $scope.ShowSaveButton = false;
 /************************************ Screen Operation and Current Step Tracking*******************/    
     $scope.currentOperation="";
-    $scope.currentStep="";  
+    $scope.currentStep=1;  
     $scope.parentMenuIcon="";
     $scope.parentMenuName="";
     $scope.activeSubMenuIcon="";
@@ -101,6 +101,10 @@ $scope.editable= false;
 /******************Response Handler********************/
 $scope.responseDispatch=function(){};
 
+
+/**********************SelectMaster*******************/
+$scope.selectMaster=window.parent.selectMaster;
+
 $scope.addDynamicElement=function(id,wheretoAdd,template)
 {
     
@@ -139,6 +143,7 @@ $(document).ready(function () {
  
     $('#previous').click(function ()
     {
+        bottomTabClick='Previous'
         previousClickHandler();
     }
     );
@@ -146,6 +151,7 @@ $(document).ready(function () {
 
     $('#next').click(function ()
     {
+        bottomTabClick='Next';
         nextClickHandler();
     }
     );

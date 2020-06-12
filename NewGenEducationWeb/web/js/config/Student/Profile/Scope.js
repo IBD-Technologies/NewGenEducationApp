@@ -264,3 +264,30 @@ function queryMandatoryCheck($scope)
   return true;
     
 }
+
+function beforeApicall(Operation, currentStep, ApiHeaderObject) {
+    var $scope = angular.element(document.getElementById('SubScreenCtrl')).scope();
+    const { dataModel, auditDataModel, summaryDataModel } = $scope;
+    switch (Operation) {
+      case 'Create':
+        break;
+      case 'Query':
+        break;
+      case 'Modification':
+        break;
+      case 'Deletion':
+        break;
+      case 'Authorisation':
+        break;
+    }
+    return true;
+  }
+
+  function afterApiCall() {
+
+    return true;
+  }
+
+
+
+

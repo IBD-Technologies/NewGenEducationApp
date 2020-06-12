@@ -826,7 +826,9 @@
         <script src="js/Utils/config.min.js"></script>
         <script src="js/Utils/session.min.js"></script>
         <script src="js/Utils/search.min.js"></script>
-        <script type="text/javascript" src="js/Utils/SelectBox.min.js"></script>
+        <script type="text/javascript" src="js/modules/HttpUtils.min.js"></script>
+        <script type="text/javascript" src="js/modules/ActionApi.min.js"></script>
+        <script type="text/javascript" src="js/modules/Select.min.js"></script>
         <script type="text/javascript" src="js/Utils/ScreenUtils.min.js"></script>
         <script src="js/config/Main/MainPage.min.js"></script>
 

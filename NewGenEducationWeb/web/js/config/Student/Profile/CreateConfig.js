@@ -12,7 +12,7 @@ var CreateConfig = {Operation: 'create',
                             '<b>Name</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="1" type="text" id="student_name" class="form-control" placeholder="Enter student name" >\n' +
+                            '<input ng-readonly="editable" ng-model="dataModel.studentName" tabindex="1" type="text" id="student_name" class="form-control" placeholder="Enter student name" >\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -20,7 +20,7 @@ var CreateConfig = {Operation: 'create',
                             '<b>ID</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="2" type="text" id="student_id" class="form-control" placeholder="Enter student id ">\n' +
+                            '<input ng-readonly="editable" ng-model="dataModel.studentID" tabindex="2" type="text" id="student_id" class="form-control" placeholder="Enter student id ">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -28,8 +28,8 @@ var CreateConfig = {Operation: 'create',
                             '<b>Upload Photo</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                             '<input data-buttonBefore="true" data-disabled="false" tabindex="3" id="BSbtninfo" type="file" class="form-control filestyle" data-buttonName="btn-primary" data-placeholder="Upload Student photo" /> \n' +
-                             '<img class="previewImage" id="ShowImage" src="#" />\n' +
+                             '<input ng-readonly="editable" data-buttonBefore="true" data-disabled="false" tabindex="3" id="BSbtninfo" type="file" class="form-control filestyle" data-buttonName="btn-primary" data-placeholder="Upload Student photo" /> \n' +
+                             '<img class="previewImage" id="ShowImage" ng-src="dataModel.profileImgPath" />\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -37,10 +37,8 @@ var CreateConfig = {Operation: 'create',
                             '<b>Class</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<select tabindex="4" id="student_class" class="form-control form-line show-tick">\n' +
-                            '<option value="">--Choose Class--</option>\n' +
-                            '<option value="Male">IX</option>\n' +
-                            '<option value="Male">X</option>\n' +
+                            '<select ng-disabled="editable" ng-model="dataModel.general.class" tabindex="4" id="student_class" class="form-control form-line show-tick">\n' +
+                             '<option ng-repeat="x in selectMaster.ClassMaster" value="{{x.id}}">{{x.value}}</option>'+
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -49,7 +47,7 @@ var CreateConfig = {Operation: 'create',
                             '<b>DOB</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="5" type="text"  class="datepicker form-control" placeholder="Enter Date Of Birth">\n' +
+                            '<input ng-disabled="editable" ng-model="dataModel.general.dob" tabindex="5" type="text"  class="datepicker form-control" placeholder="Enter Date Of Birth">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -57,11 +55,8 @@ var CreateConfig = {Operation: 'create',
                             '<b>Gender</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<select tabindex="6" id="student_gender" class="form-control form-line show-tick">\n' +
-                            '<option value="">-- Select Gender --</option>\n' +
-                            '<option value="Male">Male</option>\n' +
-                            '<option value="Femaile">Femaile</option>\n' +
-                            '<option value="Other">Other</option>\n' +
+                            '<select ng-disabled="editable" ng-model="dataModel.general.gender" tabindex="6" id="student_gender" class="form-control form-line show-tick">\n' +
+                            '<option ng-repeat="x in selectMaster.GenderMaster" value="{{x.id}}">{{x.value}}</option>\n'+
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -70,7 +65,7 @@ var CreateConfig = {Operation: 'create',
                             '<b>Note</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<textarea tabindex="7" id="student_note" rows="2" class="form-control resize LastItem" placeholder="Enter notes about student if you want"></textarea>\n' +
+                            '<textarea ng-readonly="editable" ng-model="dataModel.note" tabindex="7" id="student_note" rows="2" class="form-control resize LastItem" placeholder="Enter notes about student if you want"></textarea>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' 
@@ -89,8 +84,8 @@ var CreateConfig = {Operation: 'create',
                             '<div class="header-dropdown m-r--5">\n' +
                             '<button type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold col-bluegrey">chevron_left</i></button>\n' +
                             '<button type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold">chevron_right</i></button>\n' +
-                            '<button type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold">add</i></button>\n' +
-                            '<button type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold">remove</i></button>\n' +
+                            '<button ng-disabled="editable" type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold">add</i></button>\n' +
+                            '<button ng-disabled="editable" type="button" class="btn btn-default font-bold waves-effect btn-pagination-color"><i class="material-icons font-bold">remove</i></button>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -99,7 +94,7 @@ var CreateConfig = {Operation: 'create',
                             '<b>Name</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="1" type="text" id="family_name" class="form-control" placeholder="Enter family member name">\n' +
+                            '<input ng-readonly="editable" ng-model="dataModel.family.memberName" tabindex="1" type="text" id="family_name" class="form-control" placeholder="Enter family member name">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -107,21 +102,19 @@ var CreateConfig = {Operation: 'create',
                             '<b>Relationship</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<select tabindex="2" id="family_relation" class="form-control form-line show-tick">\n' +
+                            '<select ng-disabled="editable" ng-model="dataModel.family.memberRelationship"  tabindex="2" id="family_relation" class="form-control form-line show-tick">\n' +
                             '<option value="">-- Select Relationship --</option>\n' +
-                            '<option value="Male">Father</option>\n' +
-                            '<option value="Femaile">Mother</option>\n' +
-                            '<option value="Other">Brother</option>\n' +
+                            '<option ng-repeat="x in selectMaster.RelationshipMaster" value="{{x.id}}">{{x.value}}</option>\n'+
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '<div class="col-sm-12">\n' +
-                            '<b for="BSbtninfo1">Upload photo</b>\n' +
+                            '<b>Upload Photo</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                             '<input data-buttonBefore="true" data-disabled="false" tabindex="3" id="BSbtninfo" type="file" class="form-control filestyle" data-buttonName="btn-primary" data-placeholder="Upload Family Member photo" /> \n' +
-                             '<img class="previewImage" id="ShowAnotherImage" src="#" />\n' +
+                             '<input ng-readonly="editable" data-buttonBefore="true" data-disabled="false" tabindex="3" id="BSbtninfo" type="file" class="form-control filestyle" data-buttonName="btn-primary" data-placeholder="Upload Family Member photo" /> \n' +
+                             '<img class="previewImage" id="ShowImage" ng-src=""dataModel.family.memberImgPath" />\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -129,7 +122,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="family_occupation">Occupation</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="3" type="text" id="family_occupation" class="form-control" placeholder="Enter family member occupation">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.family.memberOccupation" tabindex="3" type="text" id="family_occupation" class="form-control" placeholder="Enter family member occupation">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -140,7 +133,7 @@ var CreateConfig = {Operation: 'create',
                             '<i class="material-icons">email</i>\n' +
                             '</span>\n' +
                             '<div class="form-line">\n' +
-                            '<input type="text" class="form-control email" placeholder="Ex: example@example.com">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.family.memberEmailID"  type="text" class="form-control email" placeholder="Ex: example@example.com">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -151,14 +144,14 @@ var CreateConfig = {Operation: 'create',
                             ' <i class="material-icons">phone_iphone</i> \n' +
                             '</span> \n' +
                             '<div class="form-line">\n' +
-                            '<input type="text" class="form-control mobile-phone-number" placeholder="Ex: +00 (000) 000-00-00">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.family.memberContactNo" type="text" class="form-control mobile-phone-number" placeholder="Ex: +00 (000) 000-00-00">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '<div class="col-sm-6">\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input type="checkbox" id="basic_checkbox_1" class="filled-in chk-col-teal" checked />\n' +
+                            '<input ng-disabled="editable" ng-model="dataModel.family.notificationRequired" type="checkbox" id="basic_checkbox_1" class="filled-in chk-col-teal" checked />\n' +
                             '<label for="basic_checkbox_1">Notification Required</label>\n' +
                             '</div>\n' +
                             '</div>\n' + // '</div>\n'+
@@ -168,10 +161,9 @@ var CreateConfig = {Operation: 'create',
                             '<b for="family_language">Language</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<select tabindex="8" id="family_language" class="form-control form-line show-tick">\n' +
+                            '<select ng-diabled="editable" ng-model="dataModel.family.language" tabindex="8" id="family_language" class="form-control form-line show-tick">\n' +
                             '<option value="">-- Select Language --</option>\n' +
-                            '<option value="english">English</option>\n' +
-                            '<option value="hindi">Hindi</option>\n' +
+                            '<option ng-repeat="x in selectMaster.LanguageMaster" value="{{x.id}}">{{x.value}}</option>\n'+
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -183,7 +175,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="address_1">Address Line 1</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="1" type="text" id="address_1" class="form-control" placeholder="Enter Address line 1">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.address.addressLine1" tabindex="1" type="text" id="address_1" class="form-control" placeholder="Enter Address line 1">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -191,7 +183,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="address_2">Address Line 2</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="2" type="text" id="address_2" class="form-control" placeholder="Enter Address line 2">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.address.addressLine2" tabindex="2" type="text" id="address_2" class="form-control" placeholder="Enter Address line 2">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -199,7 +191,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="address_3">Address Line 3</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="3" type="text" id="address_3" class="form-control" placeholder="Enter Address line 3">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.address.addressLine3" tabindex="3" type="text" id="address_3" class="form-control" placeholder="Enter Address line 3">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -207,10 +199,19 @@ var CreateConfig = {Operation: 'create',
                             '<b for="address_4">Address Line 4</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="4" type="text" id="address_4" class="form-control LastItem" placeholder="Enter Address line 4">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.address.addressLine4"  tabindex="4" type="text" id="address_4" class="form-control LastItem" placeholder="Enter Address line 4">\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '<div class="col-sm-6">\n' +
+                            '<b for="address_4">Address Line 5</b>\n' +
+                            '<div class="form-group">\n' +
+                            '<div class="form-line">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.address.addressLine5"  tabindex="4" type="text" id="address_4" class="form-control LastItem" placeholder="Enter Address line 4">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' 
+                    
                             },
                 {stepNumber: 5, stepperLabel: 'Enter Other Details',
                     triggerElement:
@@ -218,7 +219,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="national_id">National ID</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<input tabindex="1" type="text" id="national_id" class="form-control" placeholder="Enter National ID">\n' +
+                            '<input ng-readonly="editable"  ng-model="dataModel.nationalID" tabindex="1" type="text" id="national_id" class="form-control" placeholder="Enter National ID">\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -226,11 +227,9 @@ var CreateConfig = {Operation: 'create',
                             '<b for="blood_group">Blood Group</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<select tabindex="2" id="blood_group" class="form-control form-line show-tick">\n' +
+                            '<select ng-disabled="editable"  ng-model="" tabindex="2" id="blood_group" class="form-control form-line show-tick">\n' +
                             '<option value="">-- Select Blood Group --</option>\n' +
-                            '<option value="Male">A+</option>\n' +
-                            '<option value="Femaile">B+</option>\n' +
-                            '<option value="Other">A-</option>\n' +
+                            '<option ng-repeat="x in selectMaster.LanguageMaster" value="{{x.id}}">{{x.value}}</option>\n'+
                             '</select>\n' +
                             '</div>\n' +
                             '</div>\n' +
@@ -239,7 +238,7 @@ var CreateConfig = {Operation: 'create',
                             '<b for="medical_details">Existing Medical details</b>\n' +
                             '<div class="form-group">\n' +
                             '<div class="form-line">\n' +
-                            '<textarea tabindex="3" id="medical_details" rows="2" class="LastItem form-control resize" placeholder="Enter medical details if any"></textarea>\n' +
+                            '<textarea ng-readonly="editable"  ng-model="dataModel.existingMedicalDetails" tabindex="3" id="medical_details" rows="2" class="LastItem form-control resize" placeholder="Enter medical details if any"></textarea>\n' +
                             '</div>\n' +
                             '</div>\n' +
                             '</div>\n' 

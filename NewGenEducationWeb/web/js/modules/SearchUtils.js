@@ -71,7 +71,7 @@ async function launchSuggestion() {
                 searchVisible: true,
                 searchIsLoading:false
             });   
-            await callApi(apiObject, null).catch(function(e){apiError=false});
+            await callApi(apiObject, null).catch(function(e){apiError=true});
             if (apiError)
                 return;
             }

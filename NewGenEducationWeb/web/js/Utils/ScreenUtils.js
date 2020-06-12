@@ -7,8 +7,6 @@ $(document).ready(function () {
 
     $('.indexLink').click(function () {
         window.parent.launchMainScreen();
-        //window.parent.$("#frame").attr('src', '');
-
     });
  
 });

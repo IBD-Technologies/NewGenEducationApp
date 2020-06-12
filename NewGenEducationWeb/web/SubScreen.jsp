@@ -240,8 +240,10 @@
         <script type="text/javascript" src="js/Utils/ScreenUtils.min.js"></script>
         <script src="js/Utils/LastStepTemplate.min.js"></script>
         <script src="js/modules/HttpUtils.min.js"></script>
-        <script src="js/modules/ActionApi.js"></script>
-        <script src="js/modules/SearchUtils.js"></script>
+        <script src="js/modules/ActionApi.min.js"></script>
+        <script src="js/modules/SearchUtils.min.js"></script>
+        <script src="js/Utils/GeneralUtils.min.js"></script>
+        <script src="js/modules/Operation.min.js"></script>
         <script src="js/config/SubScreen/SubScreen.min.js"></script>
 
   

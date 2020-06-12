@@ -37,7 +37,7 @@ function createStepper(operation, currentStep, startStep, endStep)
     var stepperTemplate = "";
     var stepperContent = "";
     var mobile = false;
-    var x = window.matchMedia("(max-width: 700px)")
+    var x = window.matchMedia("(max-width: 700px)");
     /*if (x.matches) {
      var cols=Math.floor(12/3);
      mobile=true;
@@ -80,9 +80,9 @@ function createStepper(operation, currentStep, startStep, endStep)
         }
         stepperContent = getStepperContent(operation, stepNumber,endStep);
         $("#stepperHeader").append(stepperTemplate);
-
-        $("#stepperContent").append(stepperContent);
-        //console.log(stepperContent);
+       /*$("#stepperContent").append(stepperContent);*/
+       getSubScreenScope().addDynamicElement("stepperContent",'Append',stepperContent);
+      
     }
 
 
@@ -105,7 +105,7 @@ function getStepperLabel(operation, stepNumber) {
         }
     }
 
-    return "";
+    return("");
 }
 function getStepperContent(operation, stepNumber,endStep) {
 // console.log("operation  "+operation)
@@ -125,8 +125,7 @@ function getStepperContent(operation, stepNumber,endStep) {
                             var content ='<div id="test-l-'+stepNumber+'" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">\n' +
                                           getinsHeaderTemplate( getStepperLabel(operation, stepNumber),operation,stepNumber)+
                                           screenStepper[i].stepper[j].step[k].triggerElement +
-                                          '</div>'  
-                            //return screenStepper[i].stepper[j].step[k].triggerElement;
+                                          '</div>' ; 
                             return content;
                           }
                           else
@@ -138,7 +137,7 @@ function getStepperContent(operation, stepNumber,endStep) {
         }
     }
 
-    return "";
+    return ("");
 }
 
 function cancelClickHandler()
@@ -146,10 +145,13 @@ function cancelClickHandler()
     
 }
 
-function nextClickHandler() {
+async function nextClickHandler() {
+   var $scope = angular.element(document.getElementById('SubScreenCtrl')).scope();
+    
+    if (await nextStepEventHandler($scope))
+    {    
 
     var maxstep;
-   var $scope = angular.element(document.getElementById('SubScreenCtrl')).scope();
      
     if (selectedOperation != "")
     {
@@ -193,19 +195,7 @@ function nextClickHandler() {
         $('#test-l-' + currentStep).addClass("active");
     } else if (maxstep == currentStep)
     {
-        // if (maxStep==2)
-        //  {
-        //   $('#test-l-'+currentStep).removeClass("active");
-        //  $('.step'+currentStep).removeClass("active");
-        //  $('.step'+currentStep).addClass("completed");
-
-        //  currentStep++;
-        //  $('.step'+currentStep).addClass("active");
-        // $('#test-l-'+currentStep).addClass("active");
-
-        //  }
-
-
+       
     }
     if (selectedOperation == 'query' || selectedOperation == 'authorization' || selectedOperation == 'deletion')
     {
@@ -215,12 +205,6 @@ function nextClickHandler() {
         }
     }
 
-
-    // var href=$("#screenHeader");
-    // // $(href).show();
-    //  $('html, body').animate({
-    //       scrollTop: $(href).offset().top + 'px'
-    //   }, 'fast');
     window.scrollTo(0, 0);
     if (currentStep == 1)
     {
@@ -299,13 +283,16 @@ function nextClickHandler() {
             $scope.currentOperation = 'Modify';
             break;
         case 'authorization':
-            $scope.currentOperation = 'Auth'
+            $scope.currentOperation = 'Auth';
     }
-    $scope.currentStep = currentStep
+    $scope.currentStep = currentStep;
 
 
     $scope.$apply();
-   
+    }
+
+if(skipStep)
+nextClickHandler();
 
 }
 ;
@@ -431,9 +418,9 @@ function previousClickHandler() {
             $scope.currentOperation = 'Modify';
             break;
         case 'authorization':
-            $scope.currentOperation = 'Auth'
+            $scope.currentOperation = 'Auth';
     }
-    $scope.currentStep = currentStep
+    $scope.currentStep = currentStep;
 
 
     $scope.$apply();
@@ -465,5 +452,5 @@ function getInstructions(operation,stepNumber)
         }
     }
 
-    return [];
+    return([]);
 }

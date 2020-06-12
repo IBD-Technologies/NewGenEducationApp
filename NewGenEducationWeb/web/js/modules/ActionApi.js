@@ -15,20 +15,14 @@ var searchDataModel = {
 };
          
         async function setRequestToken (response, serviceName) {
-
-            //console.log(serviceName, "in setRequestToken")
             if (JSON.parse(await sessionStorage.getItem('Rst')) != null) {
                 var tempRst = JSON.parse(await sessionStorage.getItem('Rst'));
             } else {
                 var tempRst = [];
             }
-
-            //console.log(tempRst, "tempRst in setRequestToken ")
-
             var serviceExist = false;
             if (tempRst != null && tempRst.lenghth != 0) {
                 for (let item of tempRst) {
-                    //console.log(item, "item")
                     if (item.service == serviceName) {
                         serviceExist = true;
 
@@ -38,12 +32,10 @@ var searchDataModel = {
                             item.value = null;
                         }
                         break;
-                        // item.value = response.resourceToken
                     }
 
                 }
             }
-            //console.log(serviceExist, "serviceExist")
             if (!serviceExist) {
                 if (response.status == 'success') {
                     var serviceObj = {service: serviceName, value: response.resourceToken};
@@ -60,27 +52,14 @@ var searchDataModel = {
             }
 
             await sessionStorage.setItem('Rst', JSON.stringify(tempRst));
-            // if (response.status == 'success') {
-            //   await AsyncStorage.setItem(serviceName, response.resourceToken);
-            // }
-            // else {
-            //   await AsyncStorage.setItem(serviceName, '');
-            // }
-        };
+        }
 
 async function getRequestToken (serviceName) {
 
-    //console.log(serviceName, 'serviceName in getres')
-
     var tempRst = JSON.parse(await sessionStorage.getItem('Rst'));
-
-    //console.log(tempRst, 'tempRst getRequestToken')
 
     var serviceExist = false;
     if (tempRst != null) {
-
-
-
         for (let item of tempRst) {
             if (item.service == serviceName) {
                 resToken = item.value;
@@ -92,28 +71,16 @@ async function getRequestToken (serviceName) {
     }
     if (!serviceExist)
         resToken = null;
-    //console.log(resToken, "in  getRequestToken")
 
-
-    //  return resToken
 };
 
 async function callRequestToken(global, service) {
-    /*if(getSubScreenScope().nokotser!=null && getSubScreenScope().nokotser!='')
-        {
-        await sessionStorage.setItem(service, '');
-    callRequestTokenResponse={status:'success',resourceToken:getSubScreenScope().nokotser};
-          }
-    else
-    {*/
-    
       var request = {
         source:'NewGenEducationWeb', 
         userID: global.userID,
         instituteID: global.instituteID,
         service: service,
         token: window.parent.uhtuliak
-        //secKey: global.token1
     };
 
     await sessionStorage.setItem(service, '');
@@ -146,22 +113,16 @@ async function callRequestToken(global, service) {
 
 }
 
-framRequest = async function (apiObject) {
+async function framRequest(apiObject) {
     var globalData = JSON.parse(await sessionStorage.getItem('GLOBAL'));
 
-    //console.log('framRequest')
     await getRequestToken(apiObject.serviceName);
     if (resToken == null || resToken == '') {
-        //console.log('framRequest in if lool for restoken')
-        //console.log(resToken, 'before calling the resource token')
         await callRequestToken(globalData, apiObject.serviceName).catch(function(){});
         await getRequestToken(apiObject.serviceName);
     }
 
-    //console.log(callRequestTokenResponse, 'callReqtokResponse')
     if (resToken == null) {
-        
-        
         request = null;
     } else {
         var header = {
@@ -174,20 +135,19 @@ framRequest = async function (apiObject) {
             key: "",
             instituteID: globalData.instituteID,
             userID: globalData.userID,
-            token: resToken,
+            token: resToken
 
         };
         var request1 = {
             header: header,
             body: apiObject.datamodel,
             error: null,
-            audit: apiObject.audit,
+            audit: apiObject.audit
         };
         request = request1;
     }
 }
 
-// ---------api call -----------
 
  async function callApi (apiObject, responseDispatch) {
     if (apiObject.serviceName.includes('SearchService')) {
@@ -215,21 +175,7 @@ framRequest = async function (apiObject) {
       data : JSON.stringify(request),
       processData: false,
       contentType: 'application/json',
-      dataType: 'json',
-     /* success: async function(response){
-                    
-                    //}
-                },*/
-      /*error: function(xhr)
-      {
-          apiError=true;
-          console.log(xhr, "error response of api");
-                   var error1= [{
-                            errorCode: xhr.status,
-                            errorMessage: xhr.responseText
-                        }];
-               fn_show_backend_exception(error1);  
-             }*/
+      dataType: 'json'
     }).done( function(response){
            console.log(response, "response of api");
                         if (response.header.status == 'success') {
@@ -300,13 +246,12 @@ framRequest = async function (apiObject) {
   
   }      
     
-getServiceToken = async function (serviceName) {
+async function getServiceToken (serviceName) {
     var tempRst = JSON.parse(await sessionStorage.getItem('Rst'));
     if (tempRst != null) {
         for (let item of tempRst) {
             if (item.service == serviceName) {
                 return item.value;
-                // serviceExist = true
                 break;
             }
 
@@ -317,15 +262,13 @@ getServiceToken = async function (serviceName) {
 
 
 
-successHandler = function (response) {
-    // Operation.functions.bottomTabClick
-
+function successHandler (response) {
     switch (bottomTabClick) {
         case 'Save':
             if (response.data.header.operation == 'Create') {
                 parentStateChange({
                     currentStep: 0,
-                    currentOperation: 'Default',
+                    currentOperation: 'Default'
                 });
                  window.parent.fn_hide_parentspinner();
                 
@@ -334,26 +277,25 @@ successHandler = function (response) {
             } else if (response.data.header.operation == 'Modify') {
                 parentStateChange({
                     currentStep: 0,
-                    currentOperation: 'Default',
+                    currentOperation: 'Default'
                 });
                   window.parent.fn_hide_parentspinner();
                  fn_Show_Exception_With_Param('FE-VAL-013','');
                }
 
-            break
+            break;
         case 'Delete':
             parentStateChange({
                 currentStep: 0,
-                currentOperation: 'Default',
+                currentOperation: 'Default'
             });
               window.parent.fn_hide_parentspinner();
             fn_Show_Exception_With_Param('FE-VAL-014','');
-            
-            break
+            break;
         case 'Reject':
             parentStateChange({
                 currentStep: 0,
-                currentOperation: 'Default',
+                currentOperation: 'Default'
             });
               window.parent.fn_hide_parentspinner();
             fn_Show_Exception_With_Param('FE-VAL-017','');
@@ -362,7 +304,7 @@ successHandler = function (response) {
         case 'Auth':
             parentStateChange({
                 currentStep: 0,
-                currentOperation: 'Default',
+                currentOperation: 'Default'
             });
               window.parent.fn_hide_parentspinner();
               fn_Show_Exception_With_Param('FE-VAL-015','');
@@ -372,7 +314,7 @@ successHandler = function (response) {
             
             parentStateChange({
                 dataModel: response.data.body,
-                auditDataModel: response.data.audit,
+                auditDataModel: response.data.audit
             });
            window.parent.fn_hide_parentspinner();
             break;

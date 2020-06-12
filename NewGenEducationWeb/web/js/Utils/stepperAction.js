@@ -1,4 +1,4 @@
-var stepper
+var stepper;
 function stepperAction(currentStep, startStep, endStep) {
 
 
@@ -101,6 +101,15 @@ function stepperAction(currentStep, startStep, endStep) {
         {
             previousClickHandler();
         }
+        var emptyDataModel = Object.assign({}, $scope.emptyDataModel);
+        var emptyAuditDataModel = Object.assign({}, $scope.emptyAuditDataModel);
+        var emptySummaryDataModel = Object.assign({}, $scope.emptySummaryDataModel);
+
+        parentStateChange({
+          dataModel: emptyDataModel,
+          auditDataModel: emptyAuditDataModel,
+          summaryDataModel: emptySummaryDataModel,
+        });
     }  
     );
    $('.searchField').keyup(function()
@@ -120,5 +129,25 @@ function stepperAction(currentStep, startStep, endStep) {
                              
      );    
      
+   $('#delete').click(function()
+   {
+   bottomTabClick='Delete';
+   nextClickHandler();
+   });
+   $('#auth').click(function()
+   {
+   bottomTabClick='Auth';
+   nextClickHandler();
+   });
+   $('#reject').click(function()
+   {
+   bottomTabClick='Reject';
+   nextClickHandler();
+   });
+   $('#save').click(function()
+   {
+   bottomTabClick='Save';
+   nextClickHandler();
+   });
     
 }

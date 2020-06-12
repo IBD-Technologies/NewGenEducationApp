@@ -58,7 +58,7 @@ $(document).ready(function () {
 
     });
     
-    
+    getSelectMaster();
 
 });
 
